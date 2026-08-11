@@ -1,0 +1,47 @@
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 40;
+}
+
+.auth-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(92vw, 420px);
+  height: 100vh;
+  background: white;
+  z-index: 50;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-close {
+  align-self: flex-end;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-tab {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+
+.auth-tab.is-active {
+  background: rgb(122, 170, 86);
+  color: white;
+  border-color: rgb(122, 170, 86);
+}
+
+.auth-content {
+  margin-top: 8px;
+}

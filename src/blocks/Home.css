@@ -1,6 +1,6 @@
 .Home {
   position: relative;
-  height: 100vh;
+  height: 57vh;
   padding: 0;
   overflow: hidden;
 }
@@ -70,4 +70,78 @@
   border-radius: 50px;
   color: white;
   background-color: rgb(122, 170, 86);
+}
+
+.Home__city-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+.Home__citys-container {
+  padding: 0 16px 16px;
+  flex-direction: column;
+  display: flex;
+  gap: 24px;
+}
+
+.Home__city-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.Home__card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Home__card-content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  color: white;
+  background: linear-gradient(rgba(0, 0, 0, 0.2));
+}
+
+.Home__card-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background-color: rgb(122, 170, 86);
+  color: white;
+}
+
+.Home__card-title {
+  margin: 0;
+  font-size: 24px;
+}
+.Home__card-subtitle {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.Home__card-button {
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background-color: transparent;
+  color: white;
 }

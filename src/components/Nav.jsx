@@ -1,7 +1,7 @@
 import "../blocks/Nav.css";
 import React, { useState } from "react";
 
-function Nav() {
+function Nav({ openSignUpPanel, openSignInPanel }) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
@@ -9,10 +9,29 @@ function Nav() {
         <button className="nav_menu_button" onClick={() => setMenuOpen(true)}>
           ☰
         </button>
-        <div className="nav_login">
-          <button className="nav_button nav_sign_in">Sign In</button>
-          <button className="nav_button nav_sign_up">Sign Up</button>
-        </div>
+
+        <aside>
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="nav_close_button"
+          >
+            X
+          </button>
+          <div className="nav_login">
+            <button
+              onClick={() => openSignInPanel()}
+              className="nav_button nav_sign_in"
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => openSignUpPanel()}
+              className="nav_button nav_sign_up"
+            >
+              Sign Up
+            </button>
+          </div>
+        </aside>
       </nav>
 
       <div
