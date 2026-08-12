@@ -1,9 +1,13 @@
 import { useState } from "react";
 import "../blocks/App.css";
+import "../blocks/auth.css";
 import Nav from "./Nav.jsx";
 import Home from "./Home.jsx";
 import Footer from "./Footer.jsx";
+import AuthForm from "./AuthForm.jsx";
 import cover from "../assets/login-cover.png";
+import backButton from "../assets/back-button.png";
+import google from "../assets/google.png";
 
 function App() {
   const [isAuthPanelOpen, setIsAuthPanelOpen] = useState(false);
@@ -11,11 +15,11 @@ function App() {
 
   const authCopy = {
     signin: {
-      title: "Welcome back",
-      subtitle: "Welcome back! Please enter your details.",
+      title: "Sign In",
+      subtitle: "Start discovering family-friendly restaurants today.",
       buttonText: "Sign In",
-      switchLead: "New to Nugget?",
-      switchAction: "Create an account",
+      switchLead: "Don't have an account?",
+      switchAction: "Sign up",
     },
     signup: {
       title: "Create your account",
@@ -56,76 +60,44 @@ function App() {
       <Footer />
 
       <div
-        className={isAuthPanelOpen ? "auth-overlay is-open" : "auth-overlay"}
+        className={isAuthPanelOpen ? "auth__overlay is-open" : "auth__overlay"}
         onClick={closeAuthPanel}
       />
 
-      <aside className={isAuthPanelOpen ? "auth-panel is-open" : "auth-panel"}>
-        <button type="button" className="auth-close" onClick={closeAuthPanel}>
-          X
+      <aside
+        className={isAuthPanelOpen ? "auth__panel is-open" : "auth__panel"}
+      >
+        <button type="button" className="auth__close" onClick={closeAuthPanel}>
+          <img className="auth__close-icon" src={backButton} alt="Close" />
         </button>
 
-        <img className="auth-cover" src={cover} alt="Nugget Cover" />
+        <img className="auth__cover" src={cover} alt="Nugget Cover" />
 
-        <div className="auth-header">
-          <h2 className="auth-title">{currentAuth.title}</h2>
-          <p className="auth-subtitle">{currentAuth.subtitle}</p>
+        <div className="auth__header">
+          <h2 className="auth__title">{currentAuth.title}</h2>
+          <p className="auth__subtitle">{currentAuth.subtitle}</p>
         </div>
 
-        <div className="auth-content">
-          {authMode === "signin" ? (
-            <form className="auth-form" onSubmit={handleAuthSubmit}>
-              <label htmlFor="signin-email">Email</label>
-              <input
-                id="signin-email"
-                type="email"
-                placeholder="Enter your email"
-              />
+        <button type="button" className="auth__google">
+          <img className="auth__google-icon" src={google} alt="Google" />
+          <p className="auth__google-text">Sign in with Google</p>
+        </button>
 
-              <label htmlFor="signin-password">Password</label>
-              <input
-                id="signin-password"
-                type="password"
-                placeholder="Enter your password"
-              />
-
-              <button type="submit" className="auth-submit">
-                {currentAuth.buttonText}
-              </button>
-            </form>
-          ) : (
-            <form className="auth-form" onSubmit={handleAuthSubmit}>
-              <label htmlFor="signup-email">Email</label>
-              <input
-                id="signup-email"
-                type="email"
-                placeholder="Enter your email"
-              />
-
-              <label htmlFor="signup-password">Password</label>
-              <input
-                id="signup-password"
-                type="password"
-                placeholder="Create a password"
-              />
-              <label htmlFor="signup-confirm-password">Confirm Password</label>
-              <input
-                id="signup-confirm-password"
-                type="password"
-                placeholder="Confirm your password"
-              />
-
-              <button type="submit" className="auth-submit">
-                {currentAuth.buttonText}
-              </button>
-            </form>
-          )}
+        <div className="auth__divider">
+          <span>OR</span>
         </div>
-        <p className="auth-switch-row">
+
+        <AuthForm
+          authMode={authMode}
+          currentAuth={currentAuth}
+          handleAuthSubmit={handleAuthSubmit}
+        />
+
+        <p className="auth__switch-row">
           {currentAuth.switchLead}
           <button
             type="button"
-            className="auth-switch"
+            className="auth__switch"
             onClick={() =>
               setAuthMode(authMode === "signin" ? "signup" : "signin")
             }
