@@ -11,12 +11,6 @@ function Nav({ openSignUpPanel, openSignInPanel }) {
         </button>
 
         <aside>
-          <button
-            onClick={() => setMenuOpen(false)}
-            className="nav_close_button"
-          >
-            X
-          </button>
           <div className="nav_login">
             <button
               onClick={() => openSignInPanel()}
