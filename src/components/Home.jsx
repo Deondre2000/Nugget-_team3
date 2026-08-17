@@ -1,6 +1,6 @@
 import React from "react";
 import "../blocks/Home.css";
-import NuggetHome from "../assets/nugget-Home.jpg";
+import NuggetHome from "../assets/nugget-Home.png";
 import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
 import chicago from "../assets/chicago.jpg";
