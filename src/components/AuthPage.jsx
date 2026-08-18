@@ -3,6 +3,8 @@ import "../blocks/Auth.css";
 import AuthForm from "./AuthForm.jsx";
 import cover from "../assets/Login-cover.png";
 import google from "../assets/google.png";
+import Login from "../assets/Login-img.png";
+import back from "../assets/auth-back.png";
 
 const authCopy = {
   signin: {
@@ -32,11 +34,11 @@ function AuthPage({ authMode }) {
 
   return (
     <main className="auth-page">
-      <Link to="/" className="auth-page__back">
-        Back to home
-      </Link>
-      <img src="" alt="" className="auth-page__back" />
+      <img src={Login} alt="Login" className="auth-page__image" />
       <section className="auth-page__card">
+        <Link to="/" className="auth-page__back">
+          <img src={back} alt="Back" className="auth__back" />
+        </Link>
         <img className="auth__cover" src={cover} alt="Nugget" />
 
         <div className="auth__header">

@@ -86,7 +86,6 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  max-width: 1180px;
   margin: 44px auto 0;
 }
 
@@ -96,7 +95,6 @@
   font-size: 22px;
   font-weight: bold;
 }
-
 
 .Home__city-subtitle {
   margin: 10px 0 0;
