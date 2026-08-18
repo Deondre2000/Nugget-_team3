@@ -1,4 +1,3 @@
-import React from "react";
 import "../blocks/Home.css";
 import NuggetHome from "../assets/nugget-Home.png";
 import London from "../assets/london.jpg";

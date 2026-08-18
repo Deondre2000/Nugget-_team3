@@ -1,5 +1,5 @@
 import "../blocks/Nav.css";
-import React, { useState } from "react";
+import { useState } from "react";
 
 function Nav({ openSignUpPanel, openSignInPanel }) {
   const [menuOpen, setMenuOpen] = useState(false);
