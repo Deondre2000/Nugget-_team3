@@ -5,7 +5,7 @@ import Nav from "./Nav.jsx";
 import Home from "./Home.jsx";
 import Footer from "./Footer.jsx";
 import AuthForm from "./AuthForm.jsx";
-import cover from "../assets/login-cover.png";
+import cover from "../assets/Login-cover.png";
 import backButton from "../assets/back-button.png";
 import google from "../assets/google.png";
 
