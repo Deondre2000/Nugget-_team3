@@ -158,8 +158,10 @@
   .Home {
     position: relative;
     height: 85vh;
+    margin: 0 auto;
     padding: 0;
     overflow: hidden;
+    border-radius: 0;
   }
 
   .Home__image {
