@@ -1,5 +1,5 @@
 import "../blocks/Home.css";
-import NuggetHome from "../assets/nugget-Home.png";
+import NuggetHome from "../assets/Nugget-home.png";
 import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
 import chicago from "../assets/chicago.jpg";
