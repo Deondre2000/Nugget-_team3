@@ -1,5 +1,5 @@
 import "../blocks/Home.css";
-import DTHome from "../assets/DT-home.png";
+import DTHome from "../assets/DT-Home.png";
 import NuggetHome from "../assets/Nugget-home.png";
 import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
