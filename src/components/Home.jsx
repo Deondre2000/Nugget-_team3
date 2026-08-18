@@ -29,8 +29,12 @@ function Home() {
         </div>
       </section>
       <section className="Home__citys">
-        <div className="Home__citys-container">
           <h2 className="Home__city-title"> Browse by city</h2>
+          <p className="Home__city-subtitle">
+            We're growing city by city to create more welcoming places for
+            families
+          </p>
+        <div className="Home__citys-container">
           <div className="Home__city-card">
             <img src={London} alt="London" className="Home__card-image" />
             <button type="button" className="Home__card-badge">

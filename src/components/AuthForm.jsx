@@ -1,4 +1,4 @@
-import "../blocks/auth.css";
+import "../blocks/Auth.css";
 
 function AuthForm({ authMode, currentAuth, handleAuthSubmit }) {
   return (

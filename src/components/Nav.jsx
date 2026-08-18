@@ -1,8 +1,9 @@
 import "../blocks/Nav.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 
-function Nav({ openSignUpPanel, openSignInPanel }) {
+function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
@@ -19,18 +20,12 @@ function Nav({ openSignUpPanel, openSignInPanel }) {
             <button className="nav_button nav_add_restaurant">
               Add a Restaurant
             </button>
-            <button
-              onClick={() => openSignInPanel()}
-              className="nav_button nav_sign_in"
-            >
+            <Link to="/signin" className="nav_button nav_sign_in">
               Sign In
-            </button>
-            <button
-              onClick={() => openSignUpPanel()}
-              className="nav_button nav_sign_up"
-            >
+            </Link>
+            <Link to="/signup" className="nav_button nav_sign_up">
               Sign Up
-            </button>
+            </Link>
           </div>
         </aside>
       </nav>

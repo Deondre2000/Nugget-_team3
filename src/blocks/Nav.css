@@ -23,6 +23,7 @@
   background-color: rgb(141, 191, 101);
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav_button.nav_add_restaurant {
