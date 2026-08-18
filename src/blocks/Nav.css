@@ -1,8 +1,8 @@
-nav {
+.nav {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 41px;
+  left: 62px;
+  width: 90%;
   z-index: 20;
   padding: 16px 24px;
   box-sizing: border-box;
@@ -25,21 +25,17 @@ nav {
   cursor: pointer;
 }
 
+.nav_button.nav_add_restaurant {
+  padding: 0;
+  background-color: transparent;
+}
+
 .nav_button.nav_sign_in {
   background-color: transparent;
 }
 
 .nav_menu_button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: transparent;
-  font-size: 32px;
-  line-height: 1;
-  cursor: pointer;
-  color: white;
-  padding: 0;
+  display: none;
 }
 
 .nav__overlay {
@@ -50,7 +46,9 @@ nav {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 
 .nav__overlay.is-open {
@@ -92,4 +90,35 @@ nav {
   text-decoration: none;
   color: black;
   font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 16px 24px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav__logo {
+    display: none;
+  }
+
+  .nav_menu_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    color: white;
+    padding: 0;
+  }
 }

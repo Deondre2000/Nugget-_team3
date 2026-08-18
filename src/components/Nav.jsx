@@ -1,17 +1,24 @@
 import "../blocks/Nav.css";
 import { useState } from "react";
+import logo from "../assets/logo.png";
 
 function Nav({ openSignUpPanel, openSignInPanel }) {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
-      <nav>
+      <nav className="nav">
+        <div className="nav__logo">
+          <img src={logo} alt="Nugget" />
+        </div>
         <button className="nav_menu_button" onClick={() => setMenuOpen(true)}>
           ☰
         </button>
 
         <aside>
           <div className="nav_login">
+            <button className="nav_button nav_add_restaurant">
+              Add a Restaurant
+            </button>
             <button
               onClick={() => openSignInPanel()}
               className="nav_button nav_sign_in"

@@ -1,4 +1,5 @@
 import "../blocks/Home.css";
+import DTHome from "../assets/DT-home.png";
 import NuggetHome from "../assets/Nugget-home.png";
 import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
@@ -8,6 +9,7 @@ function Home() {
   return (
     <main>
       <section className="Home">
+        <img src={DTHome} alt="Nugget Home" className="Home__image-DT" />
         <img src={NuggetHome} alt="Nugget Home" className="Home__image" />
         <div className="Home__search-container">
           <h1 className="Home__title">
