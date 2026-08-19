@@ -19,6 +19,15 @@
   object-fit: cover;
 }
 
+.createAccountPage__edit-button {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 .createAccountPage__title {
   margin: 0;
   color: #1f1f1f;
@@ -30,16 +39,61 @@
 }
 
 .createAccountPage__content {
+  height: 100vh;
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 30px 24px 40px;
   gap: 28px;
+}
+
+.createAccountPage__section-header {
+  font-size: 36px;
+  width: 100%;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  display: block;
+}
+
+.createAccountPage__public-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.createAccountPage__public-button {
+  height: 34px;
+  width: 101px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: #1f1f1f;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.createAccountPage__public-icon {
+  margin-right: 5px;
+}
+
+.createAccountPage__public-dropdown {
+  margin-left: 5px;
+}
+
+.createAccountPage__public-text {
+  margin: 0;
+  color: #1f1f1f;
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 .createAccountPage__sidebar {
   width: 260px;
   padding-top: 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.4);
+  padding-right: 28px;
 }
 
 .createAccountPage__back-button {
@@ -73,6 +127,7 @@
 }
 
 .createAccountPage__nav-item {
+  opacity: 0.7;
   border: 0;
   background: transparent;
   border-radius: 8px;
@@ -83,6 +138,8 @@
 }
 
 .createAccountPage__create-profile-button {
+  text-decoration: underline;
+  text-underline-offset: 8px;
   border: 0;
   border-radius: 8px;
   background: rgba(84, 172, 109, 0.18);
@@ -100,9 +157,14 @@
 
 .createAccountPage__profile-top {
   display: flex;
-  align-items: flex-start;
   gap: 18px;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
+}
+
+.createAccountPage__profile-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 .createAccountPage__avatar {
@@ -112,8 +174,9 @@
   border: none;
 }
 
-.createAccountPage__profile-top {
-  margin: 14px 0 0;
+.createAccountPage__profile-title {
+  font-size: 36px;
+  margin: 0;
   color: #1b1b1b;
 }
 
@@ -121,8 +184,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 0 0 18px 82px;
   color: #222;
+  font-size: 30px;
 }
 
 .createAccountPage__username-edit {
@@ -135,8 +198,6 @@
 }
 
 .createAccountPage__username-edit-icon {
-  width: 18px;
-  height: 18px;
   object-fit: contain;
 }
 
@@ -144,7 +205,6 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  max-width: 980px;
 }
 
 .createAccountPage__field-row {
@@ -163,6 +223,7 @@
 }
 
 .createAccountPage__field label {
+  font-size: 20px;
   margin-bottom: 8px;
   color: #1f1f1f;
 }
@@ -170,7 +231,7 @@
 .createAccountPage__input,
 .createAccountPage__textarea {
   width: 100%;
-  border: 2px solid #3cb0df;
+  border: 2px solid #737373;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.3);
   padding: 16px 14px;
@@ -188,15 +249,82 @@
   resize: vertical;
 }
 
-.createAccountPage__submit-button {
-  width: 335px;
+.createAccountPage__button-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.createAccountPage__skip-button {
+  width: 151px;
   height: 43px;
-  border: 0;
+  border: 2px solid #1f1f1f;
+  background: transparent;
+  border-radius: 8px;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.createAccountPage__submit-button {
+  width: 151px;
+  height: 43px;
+  border: none;
   background: #000;
   border-radius: 8px;
   padding: 14px 16px;
   color: #ffffff;
   cursor: pointer;
+  font-size: 14px;
+}
+
+.createAccountPage__family-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.createAccountPage__family-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.createAccountPage__family-card {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.createAccountPage__family-label {
+  margin: 0;
+}
+
+.createAccountPage__count-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.createAccountPage__count-button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.createAccountPage__count-value {
+  min-width: 18px;
+  text-align: center;
+  font-size: 18px;
+  color: #1f1f1f;
 }
 
 @media (max-width: 900px) {
