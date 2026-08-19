@@ -1,0 +1,99 @@
+.createAccountPage__needs-instruction {
+  margin: 0 0 2px;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.createAccountPage__needs-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.createAccountPage__needs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.createAccountPage__needs-title {
+  margin: 0;
+  color: #777777;
+  font-size: 16px;
+}
+
+.createAccountPage__needs-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.createAccountPage__need-button {
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #bdc9d8;
+  border-radius: 12px;
+  background: #fbfcfd;
+  padding: 7px 12px;
+  color: #707070;
+  text-align: left;
+  cursor: pointer;
+}
+
+.createAccountPage__need-button--selected {
+  border: 3px solid #79c44d;
+  padding: 5px 10px;
+  color: #1f1f1f;
+}
+
+.createAccountPage__need-icon {
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d9ffc8;
+  color: #72a75a;
+  font-size: 17px;
+}
+
+.createAccountPage__need-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.createAccountPage__need-button--blue .createAccountPage__need-icon {
+  background: #d8f8fb;
+  color: #65aab0;
+}
+
+.createAccountPage__need-button--pink .createAccountPage__need-icon {
+  background: #f8dcfa;
+  color: #b17bb5;
+}
+
+.createAccountPage__need-label {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.createAccountPage__need-check {
+  color: #6bab48;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.createAccountPage__needs-expand {
+  align-self: center;
+  border: 0;
+  background: transparent;
+  color: #777777;
+  cursor: pointer;
+  font-size: 22px;
+}

@@ -1,0 +1,77 @@
+.createAccountPage__section-header {
+  font-size: 36px;
+  width: 100%;
+  margin: 0 0 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+  display: block;
+}
+
+.createAccountPage__public-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.createAccountPage__public-button {
+  height: 34px;
+  width: 101px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 4px 10px;
+  color: #1f1f1f;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.createAccountPage__public-icon {
+  margin-right: 5px;
+}
+
+.createAccountPage__public-dropdown {
+  margin-left: 5px;
+}
+
+.createAccountPage__public-text {
+  margin: 0;
+  color: #1f1f1f;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.createAccountPage__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.createAccountPage__button-row {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.createAccountPage__skip-button {
+  width: 151px;
+  height: 43px;
+  border: 2px solid #1f1f1f;
+  background: transparent;
+  border-radius: 8px;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.createAccountPage__submit-button {
+  width: 151px;
+  height: 43px;
+  border: none;
+  background: #000;
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+}

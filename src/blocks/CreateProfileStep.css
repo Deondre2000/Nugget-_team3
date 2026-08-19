@@ -1,0 +1,93 @@
+.createAccountPage__profile-top {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.createAccountPage__profile-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.createAccountPage__avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+}
+
+.createAccountPage__profile-title {
+  font-size: 36px;
+  margin: 0;
+  color: #1b1b1b;
+}
+
+.createAccountPage__username-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #222;
+  font-size: 30px;
+}
+
+.createAccountPage__username-edit {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.createAccountPage__username-edit-icon {
+  object-fit: contain;
+}
+
+.createAccountPage__field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.createAccountPage__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.createAccountPage__field--full {
+  width: 100%;
+}
+
+.createAccountPage__field label {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1f1f1f;
+}
+
+.createAccountPage__input,
+.createAccountPage__textarea {
+  width: 100%;
+  border: 2px solid #737373;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 16px 14px;
+  color: #1f1f1f;
+  outline: none;
+}
+
+.createAccountPage__input::placeholder,
+.createAccountPage__textarea::placeholder {
+  color: #767676;
+}
+
+.createAccountPage__textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+@media (max-width: 900px) {
+  .createAccountPage__field-row {
+    grid-template-columns: 1fr;
+  }
+}

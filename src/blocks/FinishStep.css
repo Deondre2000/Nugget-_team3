@@ -1,0 +1,56 @@
+.createAccountPage__finish-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+  padding-top: 50px;
+}
+
+.createAccountPage__finish-image {
+  width: 398px;
+  height: auto;
+  object-fit: contain;
+}
+
+.createAccountPage__finish-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.createAccountPage__finish-primary,
+.createAccountPage__finish-secondary {
+  width: 300px;
+  height: 48px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.createAccountPage__finish-primary {
+  border: 1px solid #79c44d;
+  background: #79c44d;
+  color: #ffffff;
+}
+
+.createAccountPage__finish-secondary {
+  border: 2px solid #1f1f1f;
+  background: #ffffff;
+  color: #1f1f1f;
+}
+
+@media (max-width: 900px) {
+  .createAccountPage__finish-content {
+    gap: 40px;
+    padding-top: 32px;
+  }
+
+  .createAccountPage__finish-image {
+    width: min(400px, 80vw);
+  }
+
+  .createAccountPage__finish-primary,
+  .createAccountPage__finish-secondary {
+    width: min(300px, 80vw);
+  }
+}
