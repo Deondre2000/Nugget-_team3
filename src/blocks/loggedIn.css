@@ -1,0 +1,28 @@
+@import "./Home.css";
+
+.Home__header {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 40px);
+}
+
+.loggedIn__logo {
+  position: relative;
+  z-index: 6;
+  display: block;
+  width: 220px;
+  max-width: 35vw;
+  height: auto;
+  background: transparent;
+}
+
+.loggedIn__header-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}

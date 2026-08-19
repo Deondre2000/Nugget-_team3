@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../blocks/Auth.css";
 import AuthForm from "./AuthForm.jsx";
 import cover from "../assets/Login-cover.png";
@@ -26,10 +26,17 @@ const authCopy = {
 };
 
 function AuthPage({ authMode }) {
+  const navigate = useNavigate();
   const currentAuth = authCopy[authMode];
 
   function handleAuthSubmit(event) {
     event.preventDefault();
+
+    if (authMode === "signin") {
+      navigate("/loggedin");
+    } else {
+      navigate("/create-profile");
+    }
   }
 
   return (
