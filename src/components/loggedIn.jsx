@@ -6,8 +6,15 @@ import Sanfransico from "../assets/sanfransico.jpg";
 import chicago from "../assets/chicago.jpg";
 import logo from "../assets/logo.png";
 import PF from "../assets/loggedin-PF.png";
+import PP from "../assets/loggedPP.png";
+import exit from "../assets/loggedEX.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LoggedIn() {
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <main>
       <section className="Home">
@@ -15,9 +22,47 @@ function LoggedIn() {
         <img src={NuggetHome} alt="Nugget Home" className="Home__image" />
         <div className="Home__header">
           <img src={logo} alt="Nugget Logo" className="loggedIn__logo" />
-          <button type="button" className="loggedIn__header-button">
+          {isProfileOpen && (
+            <button
+              type="button"
+              className="loggedIn__menu-background"
+              onClick={() => setIsProfileOpen(false)}
+            />
+          )}
+          <button
+            type="button"
+            className="loggedIn__header-button"
+            onClick={() => setIsProfileOpen((isOpen) => !isOpen)}
+          >
             <img src={PF} alt="Profile" />
           </button>
+          {isProfileOpen && (
+            <div className="loggedIn__profile-menu">
+              <div className="loggedIn__profile-summary">
+                <strong>Username</strong>
+                <span>username@gmail.com</span>
+                <b>Customer</b>
+              </div>
+              <button
+                type="button"
+                className="loggedIn__profile-menu-item"
+                onClick={() => navigate("/loggedin")}
+              >
+                <img src={PP} alt="Profile" />
+                View Profile
+              </button>
+              <button
+                type="button"
+                className="loggedIn__profile-menu-item"
+                onClick={() => navigate("/")}
+              >
+                <span aria-hidden="true">
+                  <img src={exit} alt="Exit" />
+                </span>
+                Sign Out
+              </button>
+            </div>
+          )}
         </div>
         <div className="Home__search-container">
           <h1 className="Home__title">
