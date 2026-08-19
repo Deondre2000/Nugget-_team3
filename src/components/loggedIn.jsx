@@ -5,7 +5,7 @@ import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
 import chicago from "../assets/chicago.jpg";
 import logo from "../assets/logo.png";
-import PF from "../assets/loggedin-PF.png";
+import PF from "../assets/loggedIn-PF.png";
 import PP from "../assets/loggedPP.png";
 import exit from "../assets/loggedEX.png";
 import { useState } from "react";
