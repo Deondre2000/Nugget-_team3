@@ -1,0 +1,274 @@
+.RestaurantsPage {
+  display: grid;
+  grid-template-columns: 62px minmax(390px, 1.25fr) 220px minmax(360px, 1.1fr);
+  height: 100vh;
+  color: #111;
+  background: #fff;
+  font-family: "Segoe UI Local", sans-serif;
+}
+
+.RestaurantsPage__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-right: 1px solid #d0d0d0;
+}
+
+.RestaurantsPage__menu {
+  margin-bottom: 43px;
+  border: 0;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.RestaurantsPage__sidebar img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__sidebar-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.RestaurantsPage__add {
+  width: 34px;
+  height: 34px;
+  margin-top: auto;
+  border: 1px solid #c7d1dd;
+  border-radius: 4px;
+  color: #8ca4bd;
+  font-size: 25px;
+}
+
+.RestaurantsPage__profile {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  color: white;
+  background: #111827;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.RestaurantsPage__details,
+.RestaurantsPage__features {
+  border-right: 1px solid #c7cdd3;
+}
+
+.RestaurantsPage__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.RestaurantsPage__topbar {
+  height: 40px;
+  border-bottom: 1px solid #c7cdd3;
+}
+
+.RestaurantsPage__topbar button {
+  border: 0;
+  background: transparent;
+  padding: 10px 25px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.RestaurantsPage__restaurant-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.RestaurantsPage__content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 24px 0;
+}
+
+.RestaurantsPage__content h1 {
+  margin: 0 0 18px;
+  font-size: 28px;
+}
+
+.RestaurantsPage__likes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+}
+
+.RestaurantsPage__likes-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__actions {
+  display: flex;
+  gap: 8px;
+  height: 48px;
+  margin: 20px 0 18px;
+}
+
+.RestaurantsPage__actions button {
+  border: 0;
+  cursor: pointer;
+}
+
+.RestaurantsPage__reserve {
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  background: #80c456;
+}
+
+.RestaurantsPage__share {
+  width: 48px;
+  border-radius: 5px;
+  color: white;
+  background: #050505;
+  font-size: 20px;
+}
+
+.RestaurantsPage__description {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #b7c1cc;
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+.RestaurantsPage__info {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding-top: 12px;
+  font-size: 14px;
+}
+
+.RestaurantsPage__info-button {
+  width: fit-content;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  font-family: "Inter";
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.RestaurantsPage__info-button img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__info span {
+  padding-left: 28px;
+  color: #67985a;
+}
+
+.RestaurantsPage__info b {
+  padding-left: 28px;
+  font-size: 13px;
+}
+
+.RestaurantsPage__info small {
+  font-weight: normal;
+}
+
+.RestaurantsPage__info em {
+  color: #e33d3d;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.RestaurantsPage__reviews {
+  padding: 15px 0 0 0;
+  border-top: 1px solid #b7c1cc;
+  margin: 0;
+}
+
+.RestaurantsPage__review-button {
+  width: 100%;
+  height: 48px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background: #1d2930;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.RestaurantsPage__features {
+  padding: 48px 18px 20px;
+  background: #f7f9fb;
+}
+
+.RestaurantsPage__dietary-title {
+  margin-top: 28px;
+}
+
+.RestaurantsPage__feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  margin-bottom: 10px;
+  padding: 12px;
+  border: 1px solid #aeb5bc;
+  border-radius: 8px;
+}
+
+.RestaurantsPage__feature > img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__feature div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.RestaurantsPage__feature small {
+  color: #888;
+  font-size: 11px;
+}
+
+.RestaurantsPage__map {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@media (max-width: 800px) {
+  .RestaurantsPage {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .RestaurantsPage__features,
+  .RestaurantsPage__map {
+    display: none;
+  }
+
+  .RestaurantsPage__sidebar {
+    gap: 24px;
+  }
+}

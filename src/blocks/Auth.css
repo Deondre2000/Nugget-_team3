@@ -35,6 +35,7 @@
   height: 51px;
   border-radius: 10px;
   border: 1px solid #b9b9b9;
+  cursor: pointer;
 }
 
 .auth__google-icon {

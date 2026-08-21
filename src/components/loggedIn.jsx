@@ -78,7 +78,13 @@ function LoggedIn() {
               placeholder="Search for Restaurants"
             />
           </div>
-          <button className="Home__search-button">Search Restaurants</button>
+          <button
+            className="Home__search-button"
+            type="button"
+            onClick={() => navigate("/restaurantsPage")}
+          >
+            Search Restaurants
+          </button>
         </div>
       </section>
 

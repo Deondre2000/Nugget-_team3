@@ -1,15 +1,44 @@
+@font-face {
+  font-family: "Noto Sans Georgian";
+  src: url("./fonts/NotoSansGeorgian_Condensed-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI Local";
+  src: url("./fonts/Segoe UI Bold.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Georgia Local";
+  src: url("./fonts/Georgia Italic.ttf") format("truetype");
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter_18pt-Black.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body,
 #root {
-	margin: 0;
-	padding: 0;
-	width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 body {
-	overflow-x: hidden;
+  overflow-x: hidden;
+  font-family: "Noto Sans Georgian", "Segoe UI Local", sans-serif;
 }

@@ -5,7 +5,10 @@ import London from "../assets/london.jpg";
 import Sanfransico from "../assets/sanfransico.jpg";
 import chicago from "../assets/chicago.jpg";
 
+import { useNavigate } from "react-router-dom";
+
 function Home() {
+  const navigate = useNavigate();
   return (
     <main>
       <section className="Home">
@@ -25,15 +28,20 @@ function Home() {
               placeholder="Search for Restaurants"
             />
           </div>
-          <button className="Home__search-button">Search Restaurants</button>
+          <button
+            onClick={() => navigate("/restaurantsPage")}
+            className="Home__search-button"
+          >
+            Search Restaurants
+          </button>
         </div>
       </section>
       <section className="Home__citys">
-          <h2 className="Home__city-title"> Browse by city</h2>
-          <p className="Home__city-subtitle">
-            We're growing city by city to create more welcoming places for
-            families
-          </p>
+        <h2 className="Home__city-title"> Browse by city</h2>
+        <p className="Home__city-subtitle">
+          We're growing city by city to create more welcoming places for
+          families
+        </p>
         <div className="Home__citys-container">
           <div className="Home__city-card">
             <img src={London} alt="London" className="Home__card-image" />
@@ -84,6 +92,10 @@ function Home() {
               </button>
             </div>
           </div>
+          <button type="button" className="Home__city-card Home__request-card">
+            <span className="Home__request-icon">+</span>
+            <span className="Home__request-title">Request New City</span>
+          </button>
         </div>
       </section>
     </main>

@@ -36,11 +36,10 @@
   position: relative;
   z-index: 1;
   margin: 0;
+  font-family: "Georgia Local", serif;
+  font-weight: 200;
   color: white;
-  font-family: Georgia, serif;
   font-size: 38px;
-  font-weight: bold;
-  line-height: 1.05;
   text-align: center;
 }
 
@@ -59,6 +58,8 @@
 }
 
 .Home__search-input {
+  font-family: "Georgia Local", serif;
+
   box-sizing: border-box;
   width: 100%;
   height: 48px;
@@ -84,7 +85,7 @@
 
 .Home__citys-container {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   margin: 44px auto 0;
 }
@@ -105,6 +106,38 @@
   aspect-ratio: 1.65 / 1;
   overflow: hidden;
   border-radius: 8px;
+}
+
+.Home__request-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border: 0;
+  padding: 24px;
+  color: white;
+  background-color: #0d162b;
+  cursor: pointer;
+}
+
+.Home__request-icon {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  place-items: center;
+  border-radius: 50%;
+  color: rgb(122, 170, 86);
+  background-color: #172534;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 25%);
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.Home__request-title {
+  font-familt: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .Home__card-image {
@@ -179,7 +212,6 @@
   }
 
   .Home__title {
-    font-family: "Noto Sans", Georgia, serif;
     font-size: 45px;
     margin: 20px;
   }

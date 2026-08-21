@@ -6,6 +6,7 @@ import Footer from "./Footer.jsx";
 import AuthPage from "./AuthPage.jsx";
 import LoggedIn from "./loggedIn.jsx";
 import CreateAccountPage from "./CreateAccount.jsx";
+import RestaurantsPage from "./RestaurantsPage.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/signup" element={<AuthPage authMode="signup" />} />
         <Route path="/loggedin" element={<LoggedIn />} />
         <Route path="/create-profile" element={<CreateAccountPage />} />
+        <Route path="/restaurantsPage" element={<RestaurantsPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
