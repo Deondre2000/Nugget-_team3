@@ -1,0 +1,664 @@
+.ReviewsPage {
+  display: grid;
+  grid-template-columns: 56px minmax(500px, 1.15fr) minmax(430px, 1.05fr);
+  height: 100vh;
+  color: #111;
+  background: #fff;
+  font-family: "Segoe UI Local", sans-serif;
+}
+
+.ReviewsPage--filters-open {
+  grid-template-columns: 56px minmax(500px, 1.15fr) 250px minmax(420px, 1.05fr);
+}
+
+.ReviewsPage__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-right: 1px solid #d0d9e3;
+}
+
+.ReviewsPage__menu {
+  margin-bottom: 24px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.ReviewsPage__sidebar img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.ReviewsPage__sidebar-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ReviewsPage__add {
+  width: 38px;
+  height: 38px;
+  margin-top: auto;
+  border: 1px solid #c7d1dd;
+  border-radius: 5px;
+  color: #8ca4bd;
+  background: white;
+  font-size: 28px;
+}
+
+.ReviewsPage__profile {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  background: #111827;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ReviewsPage__panel {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #c7d5e6;
+}
+
+.ReviewsPage__topbar {
+  height: 52px;
+  border-bottom: 1px solid #c7d5e6;
+}
+
+.ReviewsPage__topbar button {
+  border: 0;
+  background: transparent;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.ReviewsPage__content {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px 14px 18px;
+  background: #f4f8fd;
+}
+
+.ReviewsPage__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d0dae6;
+  padding: 4px 2px 12px;
+}
+
+.ReviewsPage__header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ReviewsPage__subback {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ReviewsPage__header-title img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.ReviewsPage__header-title h1 {
+  margin: 0;
+  font-family: "segoe ui local", sans-serif;
+  font-size: 33px;
+  font-weight: 700;
+}
+
+.ReviewsPage__header-row > img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.ReviewsPage__filter-button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ReviewsPage__filter-button--active {
+  background: #d9dde3;
+}
+
+.ReviewsPage__filter-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.ReviewsPage__review-button {
+  width: 100%;
+  height: 42px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 6px;
+  color: white;
+  background: #1d2930;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ReviewsPage__review-card {
+  cursor: pointer;
+  min-height: 286px;
+  margin-top: 12px;
+  border: 1px solid #c4d2e4;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.ReviewsPage__detail-back-row {
+  display: flex;
+  align-items: center;
+  min-height: 34px;
+  margin: 2px 0 10px;
+}
+
+.ReviewsPage__detail-back {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ReviewsPage__detail-back img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.ReviewsPage__review-card--detail {
+  margin-top: 0;
+}
+
+.ReviewsPage__review-card-head {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.ReviewsPage__review-card-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.ReviewsPage__review-card-user strong {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.05;
+}
+
+.ReviewsPage__review-card-user p {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.ReviewsPage__review-card-user small {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.ReviewsPage__review-card-more {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ReviewsPage__review-card-menu {
+  position: relative;
+}
+
+.ReviewsPage__card-dropdown {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  z-index: 8;
+  width: 170px;
+  border: 1px solid #d8dbe0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+}
+
+.ReviewsPage__card-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #eceff3;
+  padding: 9px 12px;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ReviewsPage__card-dropdown-item:last-child {
+  border-bottom: 0;
+}
+
+.ReviewsPage__card-dropdown-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ReviewsPage__card-dropdown-item--report {
+  color: #ef4444;
+}
+
+.ReviewsPage__card-dropdown-alert {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.ReviewsPage__review-card-meta {
+  margin: 10px 0 10px;
+  color: #556477;
+  font-size: 12px;
+}
+
+.ReviewsPage__review-card-meta span {
+  color: #67ba47;
+}
+
+.ReviewsPage__review-card-meta img,
+.ReviewsPage__review-card-footer img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.ReviewsPage__review-card-text {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.ReviewsPage__review-card-text--detail {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #2c3440;
+}
+
+.ReviewsPage__review-card-more-link {
+  border: 0;
+  padding: 0;
+  margin-left: 2px;
+  background: transparent;
+  color: #5f8a43;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: underline;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+.ReviewsPage__review-card-images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.ReviewsPage__review-card-images img {
+  width: 100%;
+  height: 132px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.ReviewsPage__review-card-images--detail {
+  margin-top: 8px;
+  gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.ReviewsPage__review-card-images--detail img {
+  height: 173px;
+}
+
+.ReviewsPage__review-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.ReviewsPage__review-card-tags span {
+  border-radius: 20px;
+  padding: 4px 9px;
+  background: #deefcd;
+  color: #314f21;
+  font-size: 10px;
+}
+
+.ReviewsPage__review-card-footer {
+  margin: 10px 0 0;
+  color: #78879a;
+  font-size: 12px;
+}
+
+.ReviewsPage__map {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.ReviewsPage__filters-panel {
+  border-right: 1px solid #c7d5e6;
+  background: #ffffff;
+}
+
+.ReviewsPage__filters-head {
+  display: grid;
+  grid-template-columns: 30px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  height: 52px;
+  border-bottom: 1px solid #d9dfe8;
+  padding: 0 12px;
+}
+
+.ReviewsPage__filters-close {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #111;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ReviewsPage__filters-head h2 {
+  margin: 0;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ReviewsPage__filters-clear-button {
+  border: 1px solid #d0d5dd;
+  border-radius: 5px;
+  padding: 6px 10px;
+  color: #1f2937;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ReviewsPage__filters-content {
+  display: flex;
+  min-height: calc(100vh - 52px);
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 12px 14px;
+}
+
+.ReviewsPage__filters-group {
+  border-bottom: 1px solid #e1e6ee;
+  padding-bottom: 12px;
+}
+
+.ReviewsPage__filters-group h3 {
+  margin: 0 0 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ReviewsPage__filters-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ReviewsPage__filters-inline span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ReviewsPage__filters-toggle {
+  position: relative;
+  overflow: hidden;
+  width: 92px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  padding: 3px;
+  background: #0f172a;
+  cursor: pointer;
+}
+
+.ReviewsPage__filters-toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 44px;
+  height: 28px;
+  border-radius: 999px;
+  background: #c4c9d1;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.ReviewsPage__filters-toggle--on .ReviewsPage__filters-toggle-knob {
+  transform: translateX(42px);
+  background: #80c453;
+}
+
+.ReviewsPage__filters-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ReviewsPage__filters-chips button {
+  border: 1px solid #a7b1bd;
+  border-radius: 999px;
+  padding: 6px 11px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.ReviewsPage__filters-chips button.ReviewsPage__filters-chip-button--active {
+  border-color: #6fb84a;
+  background: #dff2cf;
+  color: #27401a;
+}
+
+.ReviewsPage__filters-chips--disabled button {
+  border-color: #d4d9e1;
+  color: #98a2b3;
+  background: #f3f4f6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.ReviewsPage__filters-chips--disabled button img {
+  opacity: 0.45;
+}
+
+.ReviewsPage__filters-chips--icons button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ReviewsPage__filters-chips--icons img {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+}
+
+.ReviewsPage__filters-apply {
+  margin-top: auto;
+  height: 38px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  background: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ReviewsPage__drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  border: 0;
+  background: rgba(20, 24, 28, 0.35);
+}
+
+.ReviewsPage__drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  width: min(360px, 88vw);
+  height: 100vh;
+  transform: translateX(-100%);
+  border-right: 1px solid #dedede;
+  background: #ffffff;
+  box-shadow: 10px 0 28px rgba(0, 0, 0, 0.16);
+  transition: transform 220ms ease;
+}
+
+.ReviewsPage__drawer--open {
+  transform: translateX(0);
+}
+
+.ReviewsPage__drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 26px 22px 18px;
+  border-bottom: 1px solid #dadde0;
+}
+
+.ReviewsPage__drawer-logo {
+  width: 154px;
+  height: auto;
+  object-fit: contain;
+}
+
+.ReviewsPage__drawer-close {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ReviewsPage__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.ReviewsPage__drawer-nav button {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ReviewsPage__drawer-nav button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .ReviewsPage {
+    grid-template-columns: 56px 1fr;
+  }
+
+  .ReviewsPage--filters-open {
+    grid-template-columns: 56px 1fr;
+  }
+
+  .ReviewsPage__map {
+    display: none;
+  }
+
+  .ReviewsPage__filters-panel {
+    position: fixed;
+    top: 52px;
+    right: 0;
+    z-index: 20;
+    width: min(290px, 72vw);
+    height: calc(100vh - 52px);
+    border-left: 1px solid #c7d5e6;
+    background: #ffffff;
+  }
+}

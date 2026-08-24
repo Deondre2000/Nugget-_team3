@@ -59,6 +59,85 @@
   font-weight: bold;
 }
 
+.RestaurantsPage__drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  border: 0;
+  background: rgba(20, 24, 28, 0.35);
+}
+
+.RestaurantsPage__drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  width: min(360px, 88vw);
+  height: 100vh;
+  transform: translateX(-100%);
+  border-right: 1px solid #dedede;
+  background: #ffffff;
+  box-shadow: 10px 0 28px rgba(0, 0, 0, 0.16);
+  transition: transform 220ms ease;
+}
+
+.RestaurantsPage__drawer--open {
+  transform: translateX(0);
+}
+
+.RestaurantsPage__drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 26px 22px 18px;
+  border-bottom: 1px solid #dadde0;
+}
+
+.RestaurantsPage__drawer-logo {
+  width: 154px;
+  height: auto;
+  object-fit: contain;
+}
+
+.RestaurantsPage__drawer-close {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.RestaurantsPage__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.RestaurantsPage__drawer-nav button {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.RestaurantsPage__drawer-nav button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
 .RestaurantsPage__details,
 .RestaurantsPage__features {
   border-right: 1px solid #c7cdd3;
@@ -67,6 +146,8 @@
 .RestaurantsPage__details {
   display: flex;
   flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .RestaurantsPage__review-page {
@@ -98,8 +179,11 @@
 
 .RestaurantsPage__content {
   display: flex;
+  flex: 1;
+  min-height: 0;
   flex-direction: column;
   padding: 10px 24px 0;
+  overflow-y: auto;
 }
 
 .RestaurantsPage__content h1 {
@@ -145,6 +229,59 @@
   color: white;
   background: #050505;
   font-size: 20px;
+}
+
+.RestaurantsPage__share-menu {
+  position: relative;
+}
+
+.RestaurantsPage__share-dropdown {
+  position: absolute;
+  top: 54px;
+  right: 0;
+  z-index: 9;
+  width: 170px;
+  border: 1px solid #d8dbe0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+}
+
+.RestaurantsPage__share-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #eceff3;
+  padding: 10px 12px;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.RestaurantsPage__share-dropdown-item:last-child {
+  border-bottom: 0;
+}
+
+.RestaurantsPage__share-dropdown-item img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__share-dropdown-share-icon {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .RestaurantsPage__description {
@@ -210,33 +347,254 @@
 
 .RestaurantsPage__review-button {
   width: 100%;
-  height: 48px;
-  margin-top: 16px;
+  height: 42px;
+  min-height: 42px;
+  max-height: 42px;
+  margin-top: 12px;
+  padding: 0;
   border: 0;
-  border-radius: 5px;
+  border-radius: 6px;
   color: white;
   background: #1d2930;
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   cursor: pointer;
+}
+
+.RestaurantsPage__review-button-all {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0;
+  color: #111111;
+  background: transparent;
+  font-size: 14px;
+}
+
+.RestaurantsPage__review-button-all img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__review-card {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 14px;
+  border: 1px solid #c6d3e4;
+  border-radius: 12px;
+  padding: 14px 14px 12px;
+  background: #ffffff;
+}
+
+.RestaurantsPage__review-card-head {
+  margin: 25px 20px 0 0;
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  align-items: start;
+  gap: 10px;
+}
+
+.RestaurantsPage__review-card-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  object-fit: cover;
+}
+
+.RestaurantsPage__review-card-user strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.05;
+  font-family: "Inter", sans-serif;
+}
+
+.RestaurantsPage__review-card-user p {
+  margin: 0;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 1.12;
+}
+
+.RestaurantsPage__review-card-user small {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.RestaurantsPage__review-card-more {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.RestaurantsPage__review-card-menu {
+  position: relative;
+}
+
+.RestaurantsPage__card-dropdown {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  z-index: 8;
+  width: 170px;
+  border: 1px solid #d8dbe0;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+}
+
+.RestaurantsPage__card-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #eceff3;
+  padding: 9px 12px;
+  background: #ffffff;
+  color: #111111;
+  font-family: "Segoe UI Local", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.RestaurantsPage__card-dropdown-item:last-child {
+  border-bottom: 0;
+}
+
+.RestaurantsPage__card-dropdown-icon {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.RestaurantsPage__card-dropdown-item--report {
+  color: #ef4444;
+}
+
+.RestaurantsPage__card-dropdown-alert {
+  display: grid;
+  width: 14px;
+  height: 14px;
+  place-items: center;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.RestaurantsPage__review-card-meta {
+  margin: 12px 0 10px;
+  font-size: 14px;
+  color: #475569;
+}
+
+.RestaurantsPage__review-card-meta span {
+  color: #66b844;
+}
+
+.RestaurantsPage__review-card-text {
+  margin: 0 0 12px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.RestaurantsPage__review-card-images {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.RestaurantsPage__review-card-images img {
+  width: 100%;
+  height: 168px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.RestaurantsPage__review-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.RestaurantsPage__review-card-tags span {
+  border-radius: 20px;
+  padding: 5px 12px;
+  background: #deefcd;
+  color: #2f4f1f;
+  font-size: 13px;
+}
+
+.RestaurantsPage__review-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px 0 0;
+  color: #7c8b9c;
+  font-size: 14px;
+}
+
+.RestaurantsPage__review-card-footer img {
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
 }
 
 .RestaurantsPage__review-content {
   display: flex;
   width: 100%;
   flex-direction: column;
-  padding: 18px 18px 20px;
+  padding: 0 12px 20px;
+}
+
+.RestaurantsPage__review-subheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #d7dce1;
+}
+
+.RestaurantsPage__review-subback {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.RestaurantsPage__review-subback img {
+  display: block;
+  width: 19px;
+  height: 19px;
+  object-fit: contain;
 }
 
 .RestaurantsPage__review-content h1 {
-  margin: 0 0 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #d7dce1;
-  font-size: 20px;
+  font-family: "segoe ui local", sans-serif;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .RestaurantsPage__review-content h2 {
   margin: 0 0 12px;
+  padding-left: 2px;
   font-size: 13px;
 }
 
@@ -246,6 +604,7 @@
 }
 
 .RestaurantsPage__review-choice {
+  font-family: "Inter", sans-serif;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -265,6 +624,7 @@
 
 .RestaurantsPage__review-choice img {
   width: 22px;
+
   height: 22px;
   object-fit: contain;
 }
@@ -366,6 +726,87 @@
   border: 0;
   background: transparent;
   font-size: 11px;
+  cursor: pointer;
+}
+
+.RestaurantsPage__review-posted-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(150, 150, 150, 0.72);
+}
+
+.RestaurantsPage__review-posted-card {
+  position: relative;
+  width: 480px;
+  border-radius: 12px;
+  padding: 24px 16px 20px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.RestaurantsPage__review-posted-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.RestaurantsPage__review-posted-card h3 {
+  width: 100%;
+  margin: 0 0 0 10px;
+  padding-left: 20px;
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #111111;
+}
+
+.RestaurantsPage__review-posted-card p {
+  width: 100%;
+  margin: 8px 0 26px;
+  padding-left: 20px;
+  color: #111111;
+  font-size: 13px;
+}
+
+.RestaurantsPage__review-posted-card img {
+  width: min(240px, 78%);
+  height: auto;
+  margin: 6px 0 26px;
+  object-fit: contain;
+}
+
+.RestaurantsPage__review-posted-primary {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-radius: 4px;
+  color: #ffffff;
+  background: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.RestaurantsPage__review-posted-exit {
+  margin-top: 14px;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 17px;
   cursor: pointer;
 }
 

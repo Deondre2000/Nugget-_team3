@@ -1,4 +1,5 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+import ReviewsPage from "./ReviewsPage.jsx";
 import "../blocks/App.css";
 import Nav from "./Nav.jsx";
 import Home from "./Home.jsx";
@@ -27,6 +28,9 @@ function App() {
         <Route path="/loggedin" element={<LoggedIn />} />
         <Route path="/create-profile" element={<CreateAccountPage />} />
         <Route path="/restaurantsPage" element={<RestaurantsPage />} />
+        <Route path="/reviews" element={<ReviewsPage />} />
+        <Route path="/ReviewsPage" element={<ReviewsPage />} />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
