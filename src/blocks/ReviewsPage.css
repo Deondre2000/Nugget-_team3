@@ -86,7 +86,7 @@
   min-height: 0;
   overflow-y: auto;
   padding: 12px 14px 18px;
-  background: #f4f8fd;
+  background: #fff;
 }
 
 .ReviewsPage__header-row {
@@ -492,7 +492,9 @@
   height: 28px;
   border-radius: 999px;
   background: #c4c9d1;
-  transition: transform 180ms ease, background-color 180ms ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
 }
 
 .ReviewsPage__filters-toggle--on .ReviewsPage__filters-toggle-knob {
@@ -514,7 +516,10 @@
   color: #0f172a;
   font-size: 11px;
   cursor: pointer;
-  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
 .ReviewsPage__filters-chips button.ReviewsPage__filters-chip-button--active {
@@ -565,6 +570,10 @@
   z-index: 30;
   border: 0;
   background: rgba(20, 24, 28, 0.35);
+}
+
+.ReviewsPage__filters-overlay {
+  display: none;
 }
 
 .ReviewsPage__drawer {
@@ -638,6 +647,306 @@
   object-fit: contain;
 }
 
+.ReviewsPage__pagination {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .ReviewsPage {
+    display: block;
+    min-height: 100vh;
+    background: #b8b8b8;
+  }
+
+  .ReviewsPage__sidebar {
+    display: none;
+  }
+
+  .ReviewsPage__panel {
+    min-height: 100vh;
+    border: 0;
+    background: #f4f8fd;
+  }
+
+  .ReviewsPage__topbar {
+    display: none;
+  }
+
+  .ReviewsPage__content {
+    min-height: 100vh;
+    overflow: visible;
+    padding: 20px 20px 76px;
+    background: #ffffff;
+  }
+
+  .ReviewsPage__header-row {
+    height: 50px;
+    padding: 0 0 10px;
+    background: #ffffff;
+  }
+
+  .ReviewsPage__header-title {
+    gap: 12px;
+  }
+
+  .ReviewsPage__header-title img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ReviewsPage__header-title h1 {
+    font-size: 20px;
+  }
+
+  .ReviewsPage__filter-button {
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    border: 1px solid #aeb5bc;
+    background: #ffffff;
+  }
+
+  .ReviewsPage__review-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+    z-index: 20;
+    width: auto;
+    height: 42px;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+
+  .ReviewsPage__review-card {
+    min-height: 0;
+    margin-top: 14px;
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .ReviewsPage__review-card-head {
+    grid-template-columns: 50px 1fr auto;
+    gap: 8px;
+  }
+
+  .ReviewsPage__review-card-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .ReviewsPage__review-card-user strong,
+  .ReviewsPage__review-card-user p {
+    font-size: 11px;
+  }
+
+  .ReviewsPage__review-card-user small,
+  .ReviewsPage__review-card-meta,
+  .ReviewsPage__review-card-text,
+  .ReviewsPage__review-card-more-link {
+    font-size: 10px;
+  }
+
+  .ReviewsPage__review-card-meta {
+    margin: 10px 0 8px;
+  }
+
+  .ReviewsPage__review-card-text {
+    line-height: 1.35;
+  }
+
+  .ReviewsPage__review-card-images {
+    gap: 6px;
+  }
+
+  .ReviewsPage__review-card-images img {
+    height: 112px;
+    border-radius: 8px;
+  }
+
+  .ReviewsPage__review-card-tags {
+    gap: 5px;
+    margin-top: 8px;
+  }
+
+  .ReviewsPage__review-card-tags span {
+    padding: 4px 7px;
+    font-size: 8px;
+  }
+
+  .ReviewsPage__review-card-footer {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  .ReviewsPage__review-card-meta img,
+  .ReviewsPage__review-card-footer img {
+    width: 13px;
+    height: 13px;
+  }
+
+  .ReviewsPage__review-card-more {
+    width: 22px;
+    height: 22px;
+  }
+
+  .ReviewsPage__detail-back-row {
+    min-height: 30px;
+    margin: 0 0 8px;
+  }
+
+  .ReviewsPage__review-card--detail {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 58px);
+    margin: 0 -8px;
+    border: 0;
+    border-radius: 0;
+    padding: 10px 14px 14px;
+    font-size: 15px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-avatar {
+    width: 62px;
+    height: 62px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-user strong,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-user p {
+    font-size: 15px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-user small,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-meta,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-text,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-more-link,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-footer {
+    font-size: 15px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-head {
+    grid-template-columns: 62px 1fr auto;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-tags span {
+    font-size: 15px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-meta img,
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-footer img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-more {
+    width: 26px;
+    height: 26px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-text--summary {
+    display: none;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-tags {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-text--detail {
+    order: 2;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-images--detail {
+    order: 3;
+  }
+
+  .ReviewsPage__review-card--detail .ReviewsPage__review-card-footer {
+    order: 4;
+    margin-top: 10px;
+  }
+
+  .ReviewsPage__review-card-images--detail img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .ReviewsPage__pagination {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 16px 0 10px;
+  }
+
+  .ReviewsPage__pagination-pages,
+  .ReviewsPage__pagination-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ReviewsPage__pagination button {
+    min-width: 28px;
+    height: 32px;
+    border: 1px solid #c5ced9;
+    border-radius: 6px;
+    padding: 4px 8px;
+    color: #111827;
+    background: #ffffff;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .ReviewsPage__pagination-pages button:first-child {
+    min-width: 48px;
+  }
+
+  .ReviewsPage__pagination-actions button {
+    min-width: 46px;
+  }
+
+  .ReviewsPage__pagination .ReviewsPage__pagination-active {
+    border-color: #80c456;
+    color: #ffffff;
+    background: #80c456;
+  }
+
+  .ReviewsPage__pagination span {
+    color: #111827;
+    font-size: 12px;
+  }
+
+  .ReviewsPage__filters-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    overflow-y: auto;
+  }
+
+  .ReviewsPage__filters-content {
+    min-height: 0;
+  }
+
+  .ReviewsPage__filters-chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ReviewsPage__filters-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ReviewsPage__filters-chips button {
+    flex: 0 0 auto;
+  }
+}
+
 @media (max-width: 900px) {
   .ReviewsPage {
     grid-template-columns: 56px 1fr;
@@ -660,5 +969,43 @@
     height: calc(100vh - 52px);
     border-left: 1px solid #c7d5e6;
     background: #ffffff;
+  }
+}
+
+@keyframes ReviewsPage__filters-drop-in {
+  from {
+    transform: translate(-50%, -100%);
+  }
+
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (max-width: 800px) {
+  .ReviewsPage__filters-overlay {
+    display: block;
+    position: fixed;
+    top: 75vh;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 24;
+    border: 0;
+    padding: 0;
+    background: rgba(20, 24, 28, 0.7);
+  }
+
+  .ReviewsPage__filters-panel {
+    top: 0;
+    right: auto;
+    left: 50%;
+    width: calc(100% - 28px);
+    height: 75vh;
+    max-height: 75vh;
+    border: 0;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 8px 24px rgba(16, 24, 40, 0.18);
+    animation: ReviewsPage__filters-drop-in 220ms ease-out both;
   }
 }

@@ -17,6 +17,7 @@ import Rheart from "../assets/Rheart.png";
 import Rphoto from "../assets/Rphoto.png";
 import createBack from "../assets/createBack.png";
 import authBack from "../assets/auth-back.png";
+import Rxbt from "../assets/Rxbt.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import Rliked from "../assets/Rliked.png";
 import Rdislike from "../assets/Rdislike.png";
@@ -40,6 +41,10 @@ import RVemoji from "../assets/RVemoji.png";
 import RVFWD from "../assets/RVFWD.png";
 import Rmore from "../assets/Rmore.png";
 import Resedit from "../assets/Resedit.png";
+import MBmenu from "../assets/MBmenu.png";
+import MBback from "../assets/MBback.png";
+import MBlike from "../assets/MBlike.png";
+import MBbookmark from "../assets/MBbookmark.png";
 import { useEffect, useState } from "react";
 
 function RestaurantsPage() {
@@ -52,6 +57,7 @@ function RestaurantsPage() {
   const [selectedTags, setSelectedTags] = useState([]);
   const [openReviewMenuId, setOpenReviewMenuId] = useState(null);
   const [isShareMenuOpen, setIsShareMenuOpen] = useState(false);
+  const [isReviewClosing, setIsReviewClosing] = useState(false);
 
   useEffect(() => {
     if (location.state?.openReview) {
@@ -96,6 +102,39 @@ function RestaurantsPage() {
     }
   };
 
+  const handleClearReview = () => {
+    setSelectedExperience("");
+    setSelectedTags([]);
+
+    if (window.matchMedia("(max-width: 800px)").matches) {
+      setIsReviewClosing(true);
+      window.setTimeout(() => {
+        setShowReview(false);
+        setIsReviewClosing(false);
+        navigate("/restaurantsPage");
+      }, 220);
+      return;
+    }
+
+    setShowReview(false);
+    navigate("/restaurantsPage");
+  };
+
+  const handlePostReview = () => {
+    if (window.matchMedia("(max-width: 800px)").matches) {
+      setIsReviewClosing(true);
+      window.setTimeout(() => {
+        setShowReview(false);
+        setIsReviewClosing(false);
+        setShowPostedPopup(true);
+      }, 220);
+      return;
+    }
+
+    setShowReview(false);
+    setShowPostedPopup(true);
+  };
+
   return (
     <main className="RestaurantsPage">
       <aside className="RestaurantsPage__sidebar">
@@ -121,8 +160,18 @@ function RestaurantsPage() {
         <span className="RestaurantsPage__profile">LP</span>
       </aside>
 
-      {showReview ? (
-        <section className="RestaurantsPage__review-page">
+      {showReview && (
+        <button
+          className="RestaurantsPage__review-overlay"
+          type="button"
+          onClick={() => setShowReview(false)}
+        />
+      )}
+
+      {showReview && (
+        <section
+          className={`RestaurantsPage__review-page ${isReviewClosing ? "RestaurantsPage__review-page--closing" : ""}`}
+        >
           <div className="RestaurantsPage__topbar">
             <button onClick={() => navigate("/loggedin")} type="button">
               <img src={createBack} alt="Back" />
@@ -135,7 +184,7 @@ function RestaurantsPage() {
                 type="button"
                 onClick={() => setShowReview(false)}
               >
-                <img src={authBack} alt="Back" />
+                <img src={Rxbt} alt="Close review" />
               </button>
               <h1>Leave a review for Gouqi</h1>
             </div>
@@ -209,336 +258,340 @@ function RestaurantsPage() {
               <button
                 className="RestaurantsPage__post-review"
                 type="button"
-                onClick={() => setShowPostedPopup(true)}
+                onClick={handlePostReview}
               >
                 Post Review
               </button>
               <button
                 className="RestaurantsPage__clear-review"
                 type="button"
-                onClick={() => {
-                  setSelectedExperience("");
-                  setSelectedTags([]);
-                  navigate("/restaurantsPage");
-                }}
+                onClick={handleClearReview}
               >
                 Clear All
               </button>
             </div>
           </div>
         </section>
-      ) : (
-        <>
-          <section className="RestaurantsPage__details">
-            <div className="RestaurantsPage__topbar">
-              <button onClick={() => navigate("/loggedin")} type="button">
-                <img src={createBack} alt="Back" />
+      )}
+      <>
+        <section className="RestaurantsPage__details">
+          <div className="RestaurantsPage__topbar">
+            <button onClick={() => navigate("/loggedin")} type="button">
+              <img src={createBack} alt="Back" />
+            </button>
+          </div>
+          <div className="RestaurantsPage__mobile-controls">
+            <div className="RestaurantsPage__mobile-controls-top">
+              <button type="button" onClick={() => setIsMenuOpen(true)}>
+                <img src={MBmenu} alt="Open menu" />
+              </button>
+              <button type="button" onClick={() => navigate("/loggedin")}>
+                <img src={MBback} alt="Back" />
               </button>
             </div>
-            <img
-              className="RestaurantsPage__restaurant-image"
-              src={Rphoto}
-              alt="Gouqi restaurant"
-            />
-            <div className="RestaurantsPage__content">
-              <h1>Gouqi</h1>
-              <p className="RestaurantsPage__likes">
-                <img
-                  className="RestaurantsPage__likes-icon"
-                  src={Rheart}
-                  alt="Likes"
-                />{" "}
-                20 likes · $$ · Bar &amp; Grill
-              </p>
-              <div className="RestaurantsPage__actions">
-                <button className="RestaurantsPage__reserve" type="button">
-                  Make a Reservation
+            <div className="RestaurantsPage__mobile-controls-bottom">
+              <button type="button">
+                <img src={MBlike} alt="Like restaurant" />
+              </button>
+              <button type="button">
+                <img src={MBbookmark} alt="Save restaurant" />
+              </button>
+            </div>
+          </div>
+          <img
+            className="RestaurantsPage__restaurant-image"
+            src={Rphoto}
+            alt="Gouqi restaurant"
+          />
+          <div className="RestaurantsPage__content">
+            <h1>Gouqi</h1>
+            <p className="RestaurantsPage__likes">
+              <img
+                className="RestaurantsPage__likes-icon"
+                src={Rheart}
+                alt="Likes"
+              />{" "}
+              20 likes · $$ · Bar &amp; Grill
+            </p>
+            <div className="RestaurantsPage__actions">
+              <button className="RestaurantsPage__reserve" type="button">
+                Make a Reservation
+              </button>
+              <div className="RestaurantsPage__share-menu">
+                <button
+                  className="RestaurantsPage__share"
+                  type="button"
+                  onClick={() => setIsShareMenuOpen((current) => !current)}
+                >
+                  <img
+                    className="RestaurantsPage__share-icon"
+                    src={Redit}
+                    alt="Share"
+                  />
                 </button>
-                <div className="RestaurantsPage__share-menu">
+                {isShareMenuOpen && (
+                  <div className="RestaurantsPage__share-dropdown">
+                    <button
+                      className="RestaurantsPage__share-dropdown-item"
+                      type="button"
+                      onClick={() => setIsShareMenuOpen(false)}
+                    >
+                      <img src={Resedit} alt="Edit" />
+                      Edit
+                    </button>
+                    <button
+                      className="RestaurantsPage__share-dropdown-item"
+                      type="button"
+                      onClick={() => setIsShareMenuOpen(false)}
+                    >
+                      <span className="RestaurantsPage__share-dropdown-share-icon">
+                        ↩
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            <h2>About</h2>
+            <p className="RestaurantsPage__description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              ut hendrerit enim, vitae ornare nisi.
+            </p>
+            <div className="RestaurantsPage__info">
+              <button className="RestaurantsPage__info-button" type="button">
+                <img src={Rlocation} alt="" /> Address
+              </button>
+              <span>41 High st, address name</span>
+              <button className="RestaurantsPage__info-button" type="button">
+                <img src={Rphone} alt="" /> Phone
+              </button>
+              <span>+1 234 567 8900</span>
+              <button className="RestaurantsPage__info-button" type="button">
+                <img src={Rclock} alt="" /> Hours
+              </button>
+              <b>
+                Mon: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Tue: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Wed: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Thu: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Fri: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Sat: <small>8:30 am - 6:00 pm</small>
+              </b>
+              <b>
+                Sun: <em>Closed</em>
+              </b>
+            </div>
+            <h2 className="RestaurantsPage__reviews">Reviews</h2>{" "}
+            <button
+              className="RestaurantsPage__review-button"
+              type="button"
+              onClick={() => setShowReview(true)}
+            >
+              Leave a Review
+            </button>
+            <article className="RestaurantsPage__review-card">
+              <div className="RestaurantsPage__review-card-head">
+                <img
+                  className="RestaurantsPage__review-card-avatar"
+                  src={RVPF}
+                  alt="Reviewer"
+                />
+                <div className="RestaurantsPage__review-card-user">
+                  <strong>Me</strong>
+                  <p>City, Country</p>
+                  <small>Toddlers (1-3)</small>
+                </div>
+                <div className="RestaurantsPage__review-card-menu">
                   <button
-                    className="RestaurantsPage__share"
+                    className="RestaurantsPage__review-card-more"
                     type="button"
-                    onClick={() => setIsShareMenuOpen((current) => !current)}
+                    onClick={() =>
+                      setOpenReviewMenuId((currentId) =>
+                        currentId === "restaurants-me"
+                          ? null
+                          : "restaurants-me",
+                      )
+                    }
                   >
-                    <img
-                      className="RestaurantsPage__share-icon"
-                      src={Redit}
-                      alt="Share"
-                    />
+                    <img src={Rmore} alt="Edit" />
                   </button>
-                  {isShareMenuOpen && (
-                    <div className="RestaurantsPage__share-dropdown">
+                  {openReviewMenuId === "restaurants-me" && (
+                    <div className="RestaurantsPage__card-dropdown">
                       <button
-                        className="RestaurantsPage__share-dropdown-item"
+                        className="RestaurantsPage__card-dropdown-item"
                         type="button"
-                        onClick={() => setIsShareMenuOpen(false)}
+                        onClick={() => setOpenReviewMenuId(null)}
                       >
-                        <img src={Resedit} alt="Edit" />
-                        Edit
-                      </button>
-                      <button
-                        className="RestaurantsPage__share-dropdown-item"
-                        type="button"
-                        onClick={() => setIsShareMenuOpen(false)}
-                      >
-                        <span className="RestaurantsPage__share-dropdown-share-icon">
+                        <span className="RestaurantsPage__card-dropdown-icon">
                           ↩
                         </span>
                         Share
+                      </button>
+                      <button
+                        className="RestaurantsPage__card-dropdown-item RestaurantsPage__card-dropdown-item--report"
+                        type="button"
+                        onClick={() => setOpenReviewMenuId(null)}
+                      >
+                        <span className="RestaurantsPage__card-dropdown-alert">
+                          !
+                        </span>
+                        Report Review
                       </button>
                     </div>
                   )}
                 </div>
               </div>
-              <h2>About</h2>
-              <p className="RestaurantsPage__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                ut hendrerit enim, vitae ornare nisi.
+
+              <p className="RestaurantsPage__review-card-meta">
+                <span>❤</span> Loved it! &nbsp; 24-02-2024
               </p>
-              <div className="RestaurantsPage__info">
-                <button className="RestaurantsPage__info-button" type="button">
-                  <img src={Rlocation} alt="" /> Address
-                </button>
-                <span>41 High st, address name</span>
-                <button className="RestaurantsPage__info-button" type="button">
-                  <img src={Rphone} alt="" /> Phone
-                </button>
-                <span>+1 234 567 8900</span>
-                <button className="RestaurantsPage__info-button" type="button">
-                  <img src={Rclock} alt="" /> Hours
-                </button>
-                <b>
-                  Mon: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Tue: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Wed: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Thu: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Fri: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Sat: <small>8:30 am - 6:00 pm</small>
-                </b>
-                <b>
-                  Sun: <em>Closed</em>
-                </b>
+
+              <p className="RestaurantsPage__review-card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                ut hendrerit enim, vitae ornare nisi...more
+              </p>
+
+              <div className="RestaurantsPage__review-card-images">
+                <img src={RVfood} alt="Food" />
+                <img src={RVRes} alt="Restaurant" />
+                <img src={RVcoffee} alt="Drink" />
               </div>
-              <h2 className="RestaurantsPage__reviews">Reviews</h2>{" "}
-              <button
-                className="RestaurantsPage__review-button"
-                type="button"
-                onClick={() => setShowReview(true)}
-              >
-                Leave a Review
-              </button>
-              <article className="RestaurantsPage__review-card">
-                <div className="RestaurantsPage__review-card-head">
-                  <img
-                    className="RestaurantsPage__review-card-avatar"
-                    src={RVPF}
-                    alt="Reviewer"
-                  />
-                  <div className="RestaurantsPage__review-card-user">
-                    <strong>Me</strong>
-                    <p>City, Country</p>
-                    <small>Toddlers (1-3)</small>
-                  </div>
-                  <div className="RestaurantsPage__review-card-menu">
-                    <button
-                      className="RestaurantsPage__review-card-more"
-                      type="button"
-                      onClick={() =>
-                        setOpenReviewMenuId((currentId) =>
-                          currentId === "restaurants-me"
-                            ? null
-                            : "restaurants-me",
-                        )
-                      }
-                    >
-                      <img src={Rmore} alt="Edit" />
-                    </button>
-                    {openReviewMenuId === "restaurants-me" && (
-                      <div className="RestaurantsPage__card-dropdown">
-                        <button
-                          className="RestaurantsPage__card-dropdown-item"
-                          type="button"
-                          onClick={() => setOpenReviewMenuId(null)}
-                        >
-                          <span className="RestaurantsPage__card-dropdown-icon">
-                            ↩
-                          </span>
-                          Share
-                        </button>
-                        <button
-                          className="RestaurantsPage__card-dropdown-item RestaurantsPage__card-dropdown-item--report"
-                          type="button"
-                          onClick={() => setOpenReviewMenuId(null)}
-                        >
-                          <span className="RestaurantsPage__card-dropdown-alert">
-                            !
-                          </span>
-                          Report Review
-                        </button>
-                      </div>
-                    )}
-                  </div>
+
+              <div className="RestaurantsPage__review-card-tags">
+                <span>Allergen Aware</span>
+                <span>Kids Menu</span>
+                <span>2 Children</span>
+                <span>Toddler (1-3)</span>
+              </div>
+
+              <p className="RestaurantsPage__review-card-footer">
+                <img src={RVthumb} alt="Thumbs Up" /> 2 &nbsp; ♡ Add
+              </p>
+            </article>
+            <article className="RestaurantsPage__review-card">
+              <div className="RestaurantsPage__review-card-head">
+                <img
+                  className="RestaurantsPage__review-card-avatar"
+                  src={pfp}
+                  alt="Reviewer"
+                />
+                <div className="RestaurantsPage__review-card-user">
+                  <strong>Mittelman</strong>
+                  <p>City, Country</p>
+                  <small>Preschoolers (3-5 years)...</small>
                 </div>
-
-                <p className="RestaurantsPage__review-card-meta">
-                  <span>❤</span> Loved it! &nbsp; 24-02-2024
-                </p>
-
-                <p className="RestaurantsPage__review-card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus ut hendrerit enim, vitae ornare nisi...more
-                </p>
-
-                <div className="RestaurantsPage__review-card-images">
-                  <img src={RVfood} alt="Food" />
-                  <img src={RVRes} alt="Restaurant" />
-                  <img src={RVcoffee} alt="Drink" />
+                <div className="RestaurantsPage__review-card-menu">
+                  <button
+                    className="RestaurantsPage__review-card-more"
+                    type="button"
+                    onClick={() =>
+                      setOpenReviewMenuId((currentId) =>
+                        currentId === "restaurants-mittelman"
+                          ? null
+                          : "restaurants-mittelman",
+                      )
+                    }
+                  >
+                    <img src={Rmore} alt="Edit" />
+                  </button>
+                  {openReviewMenuId === "restaurants-mittelman" && (
+                    <div className="RestaurantsPage__card-dropdown">
+                      <button
+                        className="RestaurantsPage__card-dropdown-item"
+                        type="button"
+                        onClick={() => setOpenReviewMenuId(null)}
+                      >
+                        <span className="RestaurantsPage__card-dropdown-icon">
+                          ↩
+                        </span>
+                        Share
+                      </button>
+                      <button
+                        className="RestaurantsPage__card-dropdown-item RestaurantsPage__card-dropdown-item--report"
+                        type="button"
+                        onClick={() => setOpenReviewMenuId(null)}
+                      >
+                        <span className="RestaurantsPage__card-dropdown-alert">
+                          !
+                        </span>
+                        Report Review
+                      </button>
+                    </div>
+                  )}
                 </div>
+              </div>
 
-                <div className="RestaurantsPage__review-card-tags">
-                  <span>Allergen Aware</span>
-                  <span>Kids Menu</span>
-                  <span>2 Children</span>
-                  <span>Toddler (1-3)</span>
-                </div>
+              <p className="RestaurantsPage__review-card-meta">
+                <img src={RVthumb} alt="Thumbs Up" /> Liked it! &nbsp;
+                20-02-2024
+              </p>
 
-                <p className="RestaurantsPage__review-card-footer">
-                  <img src={RVthumb} alt="Thumbs Up" /> 2 &nbsp; ♡ Add
-                </p>
-              </article>
-              <article className="RestaurantsPage__review-card">
-                <div className="RestaurantsPage__review-card-head">
-                  <img
-                    className="RestaurantsPage__review-card-avatar"
-                    src={pfp}
-                    alt="Reviewer"
-                  />
-                  <div className="RestaurantsPage__review-card-user">
-                    <strong>Mittelman</strong>
-                    <p>City, Country</p>
-                    <small>Preschoolers (3-5 years)...</small>
-                  </div>
-                  <div className="RestaurantsPage__review-card-menu">
-                    <button
-                      className="RestaurantsPage__review-card-more"
-                      type="button"
-                      onClick={() =>
-                        setOpenReviewMenuId((currentId) =>
-                          currentId === "restaurants-mittelman"
-                            ? null
-                            : "restaurants-mittelman",
-                        )
-                      }
-                    >
-                      <img src={Rmore} alt="Edit" />
-                    </button>
-                    {openReviewMenuId === "restaurants-mittelman" && (
-                      <div className="RestaurantsPage__card-dropdown">
-                        <button
-                          className="RestaurantsPage__card-dropdown-item"
-                          type="button"
-                          onClick={() => setOpenReviewMenuId(null)}
-                        >
-                          <span className="RestaurantsPage__card-dropdown-icon">
-                            ↩
-                          </span>
-                          Share
-                        </button>
-                        <button
-                          className="RestaurantsPage__card-dropdown-item RestaurantsPage__card-dropdown-item--report"
-                          type="button"
-                          onClick={() => setOpenReviewMenuId(null)}
-                        >
-                          <span className="RestaurantsPage__card-dropdown-alert">
-                            !
-                          </span>
-                          Report Review
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                </div>
+              <p className="RestaurantsPage__review-card-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                ut hendrerit enim, vitae ornare nisi...more
+              </p>
 
-                <p className="RestaurantsPage__review-card-meta">
-                  <img src={RVthumb} alt="Thumbs Up" /> Liked it! &nbsp;
-                  20-02-2024
-                </p>
+              <div className="RestaurantsPage__review-card-tags">
+                <span>Toddler (1-3)</span>
+                <span>Teens (13-17)</span>
+                <span>2 Children</span>
+                <span>Easy Stroller Access</span>
+              </div>
 
-                <p className="RestaurantsPage__review-card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus ut hendrerit enim, vitae ornare nisi...more
-                </p>
-
-                <div className="RestaurantsPage__review-card-tags">
-                  <span>Toddler (1-3)</span>
-                  <span>Teens (13-17)</span>
-                  <span>2 Children</span>
-                  <span>Easy Stroller Access</span>
-                </div>
-
-                <p className="RestaurantsPage__review-card-footer">
-                  <span>
-                    <img src={RVemoji} alt="Emoji" />
-                  </span>
-                  Add reaction emoji
-                </p>
-              </article>
-              <button
-                className="RestaurantsPage__review-button RestaurantsPage__review-button-all"
-                onClick={() => navigate("/reviews")}
-                type="button"
-              >
-                See all reviews
+              <p className="RestaurantsPage__review-card-footer">
                 <span>
-                  <img src={RVFWD} alt="Reviewer" />
+                  <img src={RVemoji} alt="Emoji" />
                 </span>
-              </button>
-              <button
-                className="RestaurantsPage__review-button"
-                type="button"
-                onClick={() => setShowReview(true)}
-              >
-                Leave a Review
-              </button>
-            </div>
-          </section>
+                Add reaction emoji
+              </p>
+            </article>
+            <button
+              className="RestaurantsPage__review-button RestaurantsPage__review-button-all"
+              onClick={() => navigate("/reviews")}
+              type="button"
+            >
+              See all reviews
+              <span>
+                <img src={RVFWD} alt="Reviewer" />
+              </span>
+            </button>
+            <button
+              className="RestaurantsPage__review-button"
+              type="button"
+              onClick={() => setShowReview(true)}
+            >
+              Leave a Review
+            </button>
+          </div>
+        </section>
 
-          <section className="RestaurantsPage__features">
-            <h2>Family Features</h2>
-            <RestaurantsPageFeature image={Rhealthy} title="Kids Menu" />
-            <RestaurantsPageFeature image={Rhealthy} title="High Chairs" />
-            <RestaurantsPageFeature
-              image={Rcolor}
-              title="Coloring Activities"
-            />
-            <RestaurantsPageFeature
-              image={Rbaby}
-              title="Baby Change (Unisex)"
-            />
-            <h2 className="RestaurantsPage__dietary-title">Dietary Options</h2>
-            <RestaurantsPageFeature
-              image={Rvegatarian}
-              title="Vegetarian Options"
-            />
-            <RestaurantsPageFeature image={Rvegan} title="Vegan Options" />
-            <RestaurantsPageFeature
-              image={RGluten}
-              title="Gluten-Free Options"
-            />
-            <RestaurantsPageFeature image={Rhealthy} title="Healthy Options" />
-          </section>
-        </>
-      )}
+        <section className="RestaurantsPage__features">
+          <h2>Family Features</h2>
+          <RestaurantsPageFeature image={Rhealthy} title="Kids Menu" />
+          <RestaurantsPageFeature image={Rhealthy} title="High Chairs" />
+          <RestaurantsPageFeature image={Rcolor} title="Coloring Activities" />
+          <RestaurantsPageFeature image={Rbaby} title="Baby Change (Unisex)" />
+          <h2 className="RestaurantsPage__dietary-title">Dietary Options</h2>
+          <RestaurantsPageFeature
+            image={Rvegatarian}
+            title="Vegetarian Options"
+          />
+          <RestaurantsPageFeature image={Rvegan} title="Vegan Options" />
+          <RestaurantsPageFeature image={RGluten} title="Gluten-Free Options" />
+          <RestaurantsPageFeature image={Rhealthy} title="Healthy Options" />
+        </section>
+      </>
 
       {showPostedPopup && (
         <div className="RestaurantsPage__review-posted-overlay" role="dialog">
@@ -563,7 +616,11 @@ function RestaurantsPage() {
             <button
               className="RestaurantsPage__review-posted-exit"
               type="button"
-              onClick={() => setShowPostedPopup(false)}
+              onClick={() => {
+                setShowPostedPopup(false);
+                setShowReview(false);
+                navigate("/restaurantsPage");
+              }}
             >
               Exit
             </button>

@@ -50,6 +50,7 @@ import Rmore from "../assets/Rmore.png";
 import loggedEX from "../assets/loggedEX.png";
 import Pmanage from "../assets/Pmanage.png";
 import Pprofile from "../assets/Pprofile.png";
+import Padd from "../assets/Padd.png";
 
 const tabs = [
   { label: "Edit Profile", icon: PprofileG, key: "profile" },
@@ -729,6 +730,9 @@ function EditProfilePage() {
                   </div>
 
                   <div className="EditProfile__groups-grid">
+                    <span className="EditProfile__groups-heading EditProfile__groups-heading--hosted">
+                      Hosted Groups - 1
+                    </span>
                     {communityGroups.map(({ label, image }) => (
                       <div className="EditProfile__group-card" key={label}>
                         <div className="EditProfile__group-image-wrap">
@@ -775,6 +779,9 @@ function EditProfilePage() {
                         <p className="EditProfile__group-label">{label}</p>
                       </div>
                     ))}
+                    <span className="EditProfile__groups-heading EditProfile__groups-heading--community">
+                      Community Groups - 2
+                    </span>
                   </div>
 
                   <div className="EditProfile__button-row">
@@ -793,6 +800,7 @@ function EditProfilePage() {
                       className="EditProfile__add-group-button"
                     >
                       Add or Create a New Group
+                      <img src={Padd} alt="" />
                     </button>
                   </div>
                 </form>
@@ -800,6 +808,9 @@ function EditProfilePage() {
             )}
           </section>
         </div>
+        <footer className="EditProfile__footer">
+          2026 Nugget. All rights reserved - Terms of Service - Privacy Policy
+        </footer>
       </section>
 
       {isMenuOpen && (

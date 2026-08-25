@@ -346,6 +346,10 @@
   color: #1f1f1f;
 }
 
+.EditProfile__groups-heading {
+  display: none;
+}
+
 .EditProfile__public-row {
   display: flex;
   align-items: center;
@@ -635,4 +639,632 @@
   margin: 0 10px 10px;
   color: #8b98a6;
   font-size: 11px;
+}
+
+.EditProfile__footer {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .Profile:has(.EditProfile__body) {
+    min-height: 100vh;
+    padding: 2px;
+    background: #b8b8b8;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__panel {
+    min-height: calc(100vh - 4px);
+    background: #ffffff;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__topbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__topbar::after {
+    content: "Edit Profile";
+    color: #111111;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__topbar button {
+    padding: 16px 12px 16px 18px;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__topbar img {
+    content: url("../assets/auth-back.png");
+    width: 18px;
+    height: 18px;
+  }
+
+  .Profile:has(.EditProfile__body) .Profile__banner,
+  .Profile:has(.EditProfile__body) .EditProfile__tabs {
+    display: none;
+  }
+
+  .EditProfile__body {
+    display: block;
+    padding-top: 0;
+  }
+
+  .EditProfile__form-panel {
+    padding: 7px 18px 0;
+  }
+
+  .EditProfile__form-panel > .EditProfile__title {
+    display: none;
+  }
+
+  .EditProfile__avatar-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .EditProfile__avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .EditProfile__avatar-edit {
+    right: -3px;
+    bottom: -3px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .EditProfile__avatar-edit img {
+    width: 11px;
+    height: 11px;
+  }
+
+  .EditProfile__avatar-row .EditProfile__title {
+    display: none;
+  }
+
+  .EditProfile__name-row {
+    justify-content: center;
+    gap: 4px;
+    margin-top: 7px;
+  }
+
+  .EditProfile__name-row h2 {
+    font-size: 15px;
+  }
+
+  .EditProfile__name-edit img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .EditProfile__divider {
+    display: none;
+  }
+
+  .EditProfile__form {
+    gap: 9px;
+    max-width: none;
+    margin-top: 12px;
+  }
+
+  .EditProfile__field-row {
+    gap: 6px;
+  }
+
+  .EditProfile__field {
+    gap: 4px;
+  }
+
+  .EditProfile__field label {
+    font-size: 14px;
+  }
+
+  .EditProfile__input,
+  .EditProfile__textarea {
+    min-height: 38px;
+    border-color: #737373;
+    border-radius: 6px;
+    padding: 7px 11px;
+    font-size: 14px;
+  }
+
+  .EditProfile__textarea {
+    min-height: 29px;
+    resize: none;
+  }
+
+  .EditProfile__button-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 13px;
+  }
+
+  .EditProfile__save-button,
+  .EditProfile__cancel-button {
+    width: 100%;
+    height: 37px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .EditProfile__save-button {
+    order: 1;
+  }
+
+  .EditProfile__cancel-button {
+    order: 2;
+    border: 0;
+    padding: 0;
+    color: #111111;
+  }
+
+  .EditProfile__footer {
+    display: block;
+    margin: 20px 18px 0;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .Profile__topbar::after {
+    content: "Edit Community Groups";
+    font-size: 16px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__form-panel {
+    padding-top: 7px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__public-row {
+    gap: 6px;
+    margin: 0 0 12px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__public-button {
+    gap: 3px;
+    padding: 6px 9px;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__public-icon,
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__public-dropdown {
+    width: 13px;
+    height: 13px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__public-text {
+    font-size: 15px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__groups-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__groups-heading {
+    display: block;
+    order: 0;
+    color: #777777;
+    font-size: 15px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid)
+    .EditProfile__groups-heading--community {
+    order: 2;
+    margin-top: 2px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    order: 1;
+  }
+
+  .Profile:has(.EditProfile__groups-grid)
+    .EditProfile__group-card:nth-of-type(n + 2) {
+    order: 3;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-image-wrap {
+    display: contents;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-photo {
+    width: 44px;
+    height: 44px;
+    border-radius: 4px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-more {
+    top: 50%;
+    right: 0;
+    bottom: auto;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    transform: translateY(-50%);
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-more img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__group-label {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__button-row {
+    margin-top: 12px;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__save-button,
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__cancel-button {
+    display: none;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__add-group-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 50px;
+    margin: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #111111;
+    background: #f7f9fb;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .Profile:has(.EditProfile__groups-grid) .EditProfile__add-group-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+  }
+
+  .Profile:has(.EditProfile__kids-grid) .Profile__topbar::after {
+    content: "Edit Kids Profile";
+  }
+
+  .Profile:has(.EditProfile__kids-grid) .EditProfile__form-panel {
+    padding-top: 7px;
+  }
+
+  .EditProfile__public-row {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .EditProfile__public-button {
+    gap: 3px;
+    padding: 4px 7px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .EditProfile__public-icon,
+  .EditProfile__public-dropdown {
+    width: 10px;
+    height: 10px;
+  }
+
+  .EditProfile__public-text {
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections)
+    .EditProfile__needs-section:nth-child(2)
+    .EditProfile__needs-grid
+    > :nth-child(n + 5) {
+    display: none;
+  }
+
+  .Profile:has(.EditProfile__needs-sections)
+    .EditProfile__needs-section:nth-child(3)
+    .EditProfile__needs-grid
+    > :nth-child(n + 3) {
+    display: none;
+  }
+
+  .EditProfile__kids-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 13px;
+  }
+
+  .EditProfile__kid-item {
+    display: grid;
+    grid-template-columns: 56px 116px;
+    grid-template-rows: 18px 18px 26px;
+    align-items: center;
+    column-gap: 8px;
+    width: 180px;
+  }
+
+  .EditProfile__kid-icon {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+  }
+
+  .EditProfile__kid-label,
+  .EditProfile__kid-age {
+    grid-column: 2;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .EditProfile__kid-label {
+    grid-row: 1;
+  }
+
+  .EditProfile__kid-age {
+    grid-row: 2;
+  }
+
+  .EditProfile__count-row {
+    grid-column: 2;
+    grid-row: 3;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .EditProfile__count-button {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .EditProfile__count-value {
+    min-width: 12px;
+    font-size: 12px;
+  }
+
+  .Profile:has(.EditProfile__kids-grid) .EditProfile__button-row {
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .Profile:has(.EditProfile__kids-grid) .EditProfile__save-button,
+  .Profile:has(.EditProfile__kids-grid) .EditProfile__cancel-button {
+    height: 29px;
+    font-size: 10px;
+  }
+
+  .Profile:has(.EditProfile__kids-grid) .EditProfile__cancel-button {
+    border: 0;
+    padding: 0;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .Profile__topbar::after {
+    content: "Edit Needs";
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__form-panel {
+    padding-top: 7px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__title {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-row {
+    gap: 6px;
+    margin: 0 0 8px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-button,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-text,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-instruction,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-title,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__need-label,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-expand,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__save-button,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__cancel-button {
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-button {
+    gap: 3px;
+    padding: 4px 7px;
+    border-radius: 5px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-icon,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__public-dropdown {
+    width: 10px;
+    height: 10px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-instruction {
+    margin: 0 0 4px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-sections {
+    gap: 12px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-section {
+    gap: 5px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__needs-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 7px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__need-button,
+  .Profile:has(.EditProfile__needs-sections)
+    .EditProfile__need-button--selected {
+    min-height: 42px;
+    gap: 5px;
+    border: 1px solid #aebed3;
+    border-radius: 6px;
+    padding: 4px 7px;
+    background: #f9fbfd;
+    color: #1f1f1f;
+  }
+
+  .Profile:has(.EditProfile__needs-sections)
+    .EditProfile__need-button--selected {
+    border: 2px solid #79c44d;
+    padding: 3px 6px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__need-icon,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__need-icon img {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__need-check img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__button-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__save-button,
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__cancel-button {
+    width: 100%;
+    height: 36px;
+    padding: 7px 12px;
+    border-radius: 5px;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__save-button {
+    order: 1;
+  }
+
+  .Profile:has(.EditProfile__needs-sections) .EditProfile__cancel-button {
+    order: 2;
+    border: 0;
+    padding: 0;
+    color: #111111;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .Profile__topbar::after {
+    content: "Edit Saved Restaurants";
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__form-panel {
+    padding-top: 7px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__public-row {
+    gap: 6px;
+    margin: 0 0 10px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__public-button {
+    gap: 3px;
+    padding: 4px 7px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__public-icon,
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__public-dropdown {
+    width: 10px;
+    height: 10px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__public-text {
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__restaurants-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    max-width: none;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__restaurant-card {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__restaurant-image {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__restaurant-name {
+    margin: 10px 12px 4px;
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__restaurant-meta {
+    margin: 0 12px 4px;
+    font-size: 12px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid)
+    .EditProfile__restaurant-address {
+    margin: 0 12px 10px;
+    font-size: 11px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__button-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__save-button,
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__cancel-button {
+    width: 100%;
+    height: 36px;
+    padding: 7px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__save-button {
+    order: 1;
+  }
+
+  .Profile:has(.EditProfile__restaurants-grid) .EditProfile__cancel-button {
+    order: 2;
+    border: 0;
+    padding: 0;
+    color: #111111;
+  }
 }

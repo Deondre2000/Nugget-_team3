@@ -15,13 +15,13 @@ const needSections = [
       "Baby Friendly",
       "Kids Menu",
       "High Chairs",
-      "Changing Tables",
-      "Play Areas",
-      "Kids Menu",
-      "Kids Menu",
-      "Kids Menu",
-      "Kids Menu",
-      "Kids Menu",
+      "Playground",
+      "Baby Change (Women's)",
+      "Baby Change (Men's)",
+      "Baby Change (Unisex)",
+      "Nursing Friendly",
+      "Step-Free Entry",
+      "Allergen Aware",
     ],
   },
   {
@@ -30,9 +30,9 @@ const needSections = [
     color: "blue",
     options: [
       "Wheelchair Accessible",
-      "Wheelchair Accessible",
-      "Wheelchair Accessible",
-      "Wheelchair Accessible",
+      "Outdoor Seating",
+      "Air Conditioning",
+      "Dog Friendly",
       "Wheelchair Accessible",
       "Wheelchair Accessible",
       "Wheelchair Accessible",
@@ -48,29 +48,15 @@ const needSections = [
     options: [
       "Gluten Free",
       "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
-      "Dairy Free",
+      "Healthy Options",
+      "Vegan Options",
+      "Vegetarian Options",
     ],
   },
 ];
 
 function NeedsStep({ nextStep }) {
-  const [selectedNeeds, setSelectedNeeds] = useState({
-    "Family Needs-0": true,
-    "Family Needs-1": true,
-    "Family Needs-2": true,
-    "Family Needs-5": true,
-    "Family Needs-6": true,
-    "Accessibility-0": true,
-    "Dietary Options-0": true,
-    "Dietary Options-1": true,
-  });
+  const [selectedNeeds, setSelectedNeeds] = useState({});
 
   const toggleNeed = (needId) => {
     setSelectedNeeds((previousNeeds) => ({
@@ -105,14 +91,7 @@ function NeedsStep({ nextStep }) {
             className="createAccountPage__needs-section"
             key={section.title}
           >
-            <h3 className="createAccountPage__needs-title">
-              {section.title} -{" "}
-              {
-                section.options.filter(
-                  (_, index) => selectedNeeds[`${section.title}-${index}`],
-                ).length
-              }
-            </h3>
+            <h3 className="createAccountPage__needs-title">{section.title}</h3>
             <div className="createAccountPage__needs-grid">
               {section.options.map((option, index) => {
                 const needId = `${section.title}-${index}`;

@@ -164,6 +164,11 @@ function ReviewsPage() {
           {(expandedReviewId === null || expandedReviewId === "me") && (
             <article
               className={`ReviewsPage__review-card ${expandedReviewId === "me" ? "ReviewsPage__review-card--detail" : ""}`}
+              onClick={() => {
+                if (expandedReviewId === null) {
+                  setExpandedReviewId("me");
+                }
+              }}
             >
               <div className="ReviewsPage__review-card-head">
                 <img
@@ -176,7 +181,10 @@ function ReviewsPage() {
                   <p>City, Country</p>
                   <small>Toddlers (1-3)</small>
                 </div>
-                <div className="ReviewsPage__review-card-menu">
+                <div
+                  className="ReviewsPage__review-card-menu"
+                  onClick={(event) => event.stopPropagation()}
+                >
                   <button
                     className="ReviewsPage__review-card-more"
                     type="button"
@@ -195,7 +203,9 @@ function ReviewsPage() {
                         type="button"
                         onClick={() => setOpenReviewMenuId(null)}
                       >
-                        <span className="ReviewsPage__card-dropdown-icon">↩</span>
+                        <span className="ReviewsPage__card-dropdown-icon">
+                          ↩
+                        </span>
                         Share
                       </button>
                       <button
@@ -203,7 +213,9 @@ function ReviewsPage() {
                         type="button"
                         onClick={() => setOpenReviewMenuId(null)}
                       >
-                        <span className="ReviewsPage__card-dropdown-alert"><img src={report} alt="Report" /></span>
+                        <span className="ReviewsPage__card-dropdown-alert">
+                          <img src={report} alt="Report" />
+                        </span>
                         Report Review
                       </button>
                     </div>
@@ -215,7 +227,9 @@ function ReviewsPage() {
                 <span>❤</span> Loved it! &nbsp; 24-02-2024
               </p>
 
-              <p className="ReviewsPage__review-card-text">
+              <p
+                className={`ReviewsPage__review-card-text ${expandedReviewId === "me" ? "ReviewsPage__review-card-text--summary" : ""}`}
+              >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
                 ut hendrerit enim, vitae ornare nisi...
                 <button
@@ -251,6 +265,7 @@ function ReviewsPage() {
                 <div className="ReviewsPage__review-card-images ReviewsPage__review-card-images--detail">
                   <img src={RVfood} alt="Food" />
                   <img src={RVRes} alt="Restaurant" />
+                  <img src={RVcoffee} alt="Drink" />
                 </div>
               ) : (
                 <div className="ReviewsPage__review-card-images">
@@ -309,7 +324,9 @@ function ReviewsPage() {
                         type="button"
                         onClick={() => setOpenReviewMenuId(null)}
                       >
-                        <span className="ReviewsPage__card-dropdown-icon">↩</span>
+                        <span className="ReviewsPage__card-dropdown-icon">
+                          ↩
+                        </span>
                         Share
                       </button>
                       <button
@@ -317,7 +334,9 @@ function ReviewsPage() {
                         type="button"
                         onClick={() => setOpenReviewMenuId(null)}
                       >
-                        <span className="ReviewsPage__card-dropdown-alert">!</span>
+                        <span className="ReviewsPage__card-dropdown-alert">
+                          !
+                        </span>
                         Report Review
                       </button>
                     </div>
@@ -378,8 +397,132 @@ function ReviewsPage() {
               </p>
             </article>
           )}
+
+          {!isDetailView && (
+            <>
+              <article className="ReviewsPage__review-card">
+                <div className="ReviewsPage__review-card-head">
+                  <img
+                    className="ReviewsPage__review-card-avatar"
+                    src={pfp}
+                    alt="Reviewer"
+                  />
+                  <div className="ReviewsPage__review-card-user">
+                    <strong>Name</strong>
+                    <p>City, Country</p>
+                    <small>Big Kids (4-7 years)...</small>
+                  </div>
+                  <button
+                    className="ReviewsPage__review-card-more"
+                    type="button"
+                    onClick={() => setOpenReviewMenuId("reviews-third")}
+                  >
+                    <img src={Rmore} alt="More options" />
+                  </button>
+                </div>
+                <p className="ReviewsPage__review-card-meta">
+                  <img src={RVthumb} alt="Thumbs Up" /> Liked it! &nbsp;
+                  17-01-2024
+                </p>
+                <p className="ReviewsPage__review-card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vivamus ut hendrerit enim, vitae ornare nisi...
+                  <button
+                    className="ReviewsPage__review-card-more-link"
+                    type="button"
+                  >
+                    more
+                  </button>
+                </p>
+                <div className="ReviewsPage__review-card-tags">
+                  <span>Big Kids (4-7)</span>
+                  <span>Teens (13-17)</span>
+                  <span>2 Children</span>
+                  <span>Family Washroom</span>
+                  <span>Kids Menu</span>
+                </div>
+                <p className="ReviewsPage__review-card-footer">
+                  <img src={RVthumb} alt="Thumbs Up" /> 2 &nbsp; ♡ Add
+                </p>
+              </article>
+
+              <article className="ReviewsPage__review-card">
+                <div className="ReviewsPage__review-card-head">
+                  <img
+                    className="ReviewsPage__review-card-avatar"
+                    src={RVPF}
+                    alt="Reviewer"
+                  />
+                  <div className="ReviewsPage__review-card-user">
+                    <strong>Name</strong>
+                    <p>City, Country</p>
+                    <small>Big Kids (4-7 years)...</small>
+                  </div>
+                  <button
+                    className="ReviewsPage__review-card-more"
+                    type="button"
+                    onClick={() => setOpenReviewMenuId("reviews-fourth")}
+                  >
+                    <img src={Rmore} alt="More options" />
+                  </button>
+                </div>
+                <p className="ReviewsPage__review-card-meta">
+                  <img src={RVdis} alt="Thumbs Down" /> Wouldn't go back &nbsp;
+                  13-11-2023
+                </p>
+                <p className="ReviewsPage__review-card-text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Vivamus ut hendrerit enim, vitae ornare nisi...
+                  <button
+                    className="ReviewsPage__review-card-more-link"
+                    type="button"
+                  >
+                    more
+                  </button>
+                </p>
+                <div className="ReviewsPage__review-card-images">
+                  <img src={RVfood} alt="Food" />
+                  <img src={RVRes} alt="Restaurant" />
+                </div>
+                <p className="ReviewsPage__review-card-footer">
+                  <img src={RVthumb} alt="Thumbs Up" /> 2 &nbsp; ♡ Add
+                </p>
+              </article>
+            </>
+          )}
+
+          {!isDetailView && (
+            <nav className="ReviewsPage__pagination" aria-label="Reviews pages">
+              <div className="ReviewsPage__pagination-pages">
+                <button type="button">Start</button>
+                <button
+                  className="ReviewsPage__pagination-active"
+                  type="button"
+                >
+                  1
+                </button>
+                <button type="button">2</button>
+                <button type="button">3</button>
+                <span>...</span>
+                <button type="button">10</button>
+              </div>
+              <div className="ReviewsPage__pagination-actions">
+                <button type="button">Next</button>
+                <button type="button">End</button>
+              </div>
+            </nav>
+          )}
         </div>
       </section>
+
+      {showFilters && (
+        <button
+          type="button"
+          className="ReviewsPage__filters-overlay"
+          aria-label="Close filters"
+          onClick={() => setShowFilters(false)}
+        />
+      )}
 
       {showFilters && (
         <aside className="ReviewsPage__filters-panel">

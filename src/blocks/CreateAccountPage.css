@@ -105,16 +105,60 @@
   padding: 18px 18px 0;
 }
 
-@media (max-width: 900px) {
+.createAccountPage__footer {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .createAccountPage {
+    min-height: 100vh;
+    padding: 2px;
+    background: #ffffff;
+  }
+
+  .createAccountPage__top-back {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    z-index: 3;
+    padding: 8px;
+  }
+
+  .createAccountPage__top-back-icon {
+    content: url("../assets/auth-back.png");
+    width: 18px;
+    height: 18px;
+  }
+
+  .createAccountPage__hero,
+  .createAccountPage__edit-button,
+  .createAccountPage__sidebar {
+    display: none;
+  }
+
+  .createAccountPage__content {
+    display: block;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .createAccountPage__card {
+    min-height: 0;
+    padding: 58px 18px 0;
+    background: #ffffff;
+  }
+
   .createAccountPage__brand-row {
     padding: 0 18px;
   }
 
-  .createAccountPage__content {
-    flex-direction: column;
-  }
-
-  .createAccountPage__sidebar {
-    width: 100%;
+  .createAccountPage__footer {
+    display: block;
+    position: static;
+    margin: 20px 18px 0;
+    color: #777777;
+    font-size: 14px;
+    text-align: center;
   }
 }

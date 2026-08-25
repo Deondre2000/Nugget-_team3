@@ -318,6 +318,185 @@
   object-fit: cover;
 }
 
+@media (max-width: 800px) {
+  .Profile {
+    display: block;
+    min-height: 100vh;
+    background: #b8b8b8;
+  }
+
+  .Profile__sidebar {
+    display: none;
+  }
+
+  .Profile__panel {
+    min-height: 100vh;
+    background: #ffffff;
+  }
+
+  .Profile__topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    width: 100%;
+    height: 58px;
+    border: 0;
+  }
+
+  .Profile__topbar button {
+    padding: 28px 18px 10px;
+  }
+
+  .Profile__topbar img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .Profile__banner {
+    height: 120px;
+  }
+
+  .Profile__banner-edit {
+    top: 12px;
+    right: 12px;
+    width: 26px;
+    height: 26px;
+  }
+
+  .Profile__banner-edit img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .Profile__banner-avatar {
+    left: 18px;
+    bottom: -32px;
+    width: 64px;
+    height: 64px;
+  }
+
+  .Profile__body {
+    padding: 42px 16px 28px;
+  }
+
+  .Profile__name-row h1 {
+    font-size: 15px;
+  }
+
+  .Profile__location,
+  .Profile__bio {
+    font-size: 10px;
+  }
+
+  .Profile__bio {
+    margin-top: 8px;
+  }
+
+  .Profile__divider {
+    margin: 10px 0;
+  }
+
+  .Profile__section {
+    margin-bottom: 18px;
+  }
+
+  .Profile__section-header {
+    margin-bottom: 7px;
+  }
+
+  .Profile__section-header h2,
+  .Profile__edit-link {
+    font-size: 9px;
+  }
+
+  .Profile__public,
+  .Profile__needs-label {
+    font-size: 8px;
+  }
+
+  .Profile__kids-row {
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+
+  .Profile__kid {
+    gap: 4px;
+    width: 44px;
+    font-size: 9px;
+  }
+
+  .Profile__kid-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .Profile__kid-count {
+    position: absolute;
+    right: -3px;
+    bottom: -1px;
+    display: grid;
+    width: 17px;
+    height: 17px;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffffff;
+    background: #1f1f1f;
+    font-size: 8px;
+  }
+
+  .Profile__needs-columns {
+    display: block;
+  }
+
+  .Profile__needs-column {
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+
+  .Profile__tags {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 7px;
+    max-width: none;
+  }
+
+  .Profile__tag {
+    min-height: 29px;
+    gap: 5px;
+    border-radius: 6px;
+    padding: 3px 7px;
+    font-size: 8px;
+  }
+
+  .Profile__tag-icon,
+  .Profile__tag-icon img {
+    width: 17px;
+    height: 17px;
+  }
+
+  .Profile__needs-expand {
+    height: 12px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .Profile__groups-row {
+    gap: 13px;
+  }
+
+  .Profile__group {
+    width: 44px;
+    gap: 4px;
+    font-size: 8px;
+  }
+
+  .Profile__group img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+}
+
 .Profile__drawer-overlay {
   position: fixed;
   inset: 0;

@@ -43,8 +43,8 @@ const needSections = [
     options: [
       { label: "Baby Friendly", color: "green" },
       { label: "Kids Menu", color: "green" },
-      { label: "Kids Menu", color: "green" },
-      { label: "Kids Menu", color: "green" },
+      { label: "High Chairs", color: "green" },
+      { label: "Family Washroom", color: "green" },
     ],
   },
   {
@@ -160,6 +160,9 @@ function ProfilePage() {
                 <div className="Profile__kid" key={label}>
                   <div className="Profile__kid-icon">
                     <img src={icon} alt="" />
+                    {count && (
+                      <small className="Profile__kid-count">{count}</small>
+                    )}
                   </div>
                   <span>{label}</span>
                 </div>

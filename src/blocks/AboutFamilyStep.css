@@ -46,3 +46,106 @@
   font-size: 18px;
   color: #1f1f1f;
 }
+
+@media (max-width: 800px) {
+  .createAccountPage__form {
+    gap: 12px;
+  }
+
+  .createAccountPage__section-header {
+    margin: 0 0 8px;
+    padding: 0;
+    border: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .createAccountPage__public-row {
+    display: none;
+  }
+
+  .createAccountPage__family-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .createAccountPage__family-item {
+    display: grid;
+    grid-template-columns: 56px 116px;
+    grid-template-rows: 18px 18px 26px;
+    align-items: center;
+    column-gap: 8px;
+    width: 180px;
+  }
+
+  .createAccountPage__family-card {
+    display: contents;
+  }
+
+  .createAccountPage__family-icon {
+    grid-column: 1;
+    grid-row: 1 / 4;
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .createAccountPage__family-label {
+    grid-column: 2;
+    font-size: 9px;
+    line-height: 1.05;
+    text-align: center;
+  }
+
+  .createAccountPage__family-label:first-of-type {
+    grid-row: 1;
+  }
+
+  .createAccountPage__family-label:nth-of-type(2) {
+    grid-row: 2;
+  }
+
+  .createAccountPage__count-row {
+    grid-column: 2;
+    grid-row: 3;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0;
+  }
+
+  .createAccountPage__count-button {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .createAccountPage__count-value {
+    min-width: 12px;
+    font-size: 12px;
+  }
+
+  .createAccountPage__button-row {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .createAccountPage__submit-button,
+  .createAccountPage__skip-button {
+    width: 100%;
+    height: 36px;
+    font-size: 11px;
+  }
+
+  .createAccountPage__submit-button {
+    order: 1;
+  }
+
+  .createAccountPage__skip-button {
+    order: 2;
+    border: 0;
+    padding: 0;
+  }
+}

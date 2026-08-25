@@ -86,8 +86,73 @@ teAccountPage__.createAccountPage__profile-top {
   resize: vertical;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
+  .createAccountPage__form {
+    gap: 16px;
+  }
+
+  .createAccountPage__profile-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  .createAccountPage__profile-copy {
+    display: contents;
+  }
+
+  .createAccountPage__profile-title {
+    order: 1;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .createAccountPage__avatar {
+    order: 2;
+    width: 68px;
+    height: 68px;
+  }
+
+  .createAccountPage__username-row {
+    order: 3;
+    gap: 6px;
+    font-size: 14px;
+  }
+
+  .createAccountPage__username-edit-icon {
+    width: 14px;
+    height: 14px;
+  }
+
   .createAccountPage__field-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .createAccountPage__field label {
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
+
+  .createAccountPage__input,
+  .createAccountPage__textarea {
+    min-height: 47px;
+    border: 1px solid #737373;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .createAccountPage__textarea {
+    min-height: 84px;
+  }
+
+  .createAccountPage__submit-button {
+    width: 100%;
+    height: 36px;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 11px;
   }
 }

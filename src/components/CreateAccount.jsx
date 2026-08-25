@@ -101,6 +101,9 @@ function CreateAccountPage() {
 
         <section className="createAccountPage__card">{renderStep()}</section>
       </div>
+      <footer className="createAccountPage__footer">
+        2026 Nugget. All rights reserved - Terms of Service - Privacy Policy
+      </footer>
     </main>
   );
 }
