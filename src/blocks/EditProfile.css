@@ -1,0 +1,231 @@
+.EditProfile__body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  padding-top: 24px;
+}
+
+.EditProfile__tabs {
+  border-right: 1px solid #e2e8f0;
+  padding: 0 20px 20px 32px;
+}
+
+.EditProfile__tabs-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.EditProfile__tabs-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.EditProfile__tabs-close {
+  border: 0;
+  background: transparent;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+}
+
+.EditProfile__tabs-divider {
+  margin: 14px 0 18px;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+.EditProfile__tabs-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.EditProfile__tabs-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: #9aa5b1;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.EditProfile__tabs-item--active {
+  color: #22c55e;
+}
+
+.EditProfile__tabs-icon {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  font-size: 14px;
+}
+
+.EditProfile__tabs-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.EditProfile__form-panel {
+  padding: 0 32px 32px;
+}
+
+.EditProfile__avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.EditProfile__avatar {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px #e2e8f0;
+  overflow: visible;
+}
+
+.EditProfile__avatar img:first-child {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: contain;
+}
+
+.EditProfile__avatar-edit {
+  background: transparent;
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.EditProfile__avatar-edit img {
+  width: 14px;
+  height: 14px;
+}
+
+.EditProfile__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.EditProfile__name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.EditProfile__name-row h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.EditProfile__name-edit {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.EditProfile__name-edit img {
+  width: 16px;
+  height: 16px;
+}
+
+.EditProfile__divider {
+  margin: 16px 0 24px;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+.EditProfile__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+}
+
+.EditProfile__field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.EditProfile__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.EditProfile__field--full {
+  width: 100%;
+}
+
+.EditProfile__field label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.EditProfile__input,
+.EditProfile__textarea {
+  width: 100%;
+  border: 1px solid #d8dee5;
+  border-radius: 8px;
+  background: #f4f6f8;
+  padding: 12px 14px;
+  color: #555;
+  font-size: 13px;
+  outline: none;
+}
+
+.EditProfile__textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.EditProfile__button-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.EditProfile__cancel-button {
+  border: 1px solid #22c55e;
+  border-radius: 8px;
+  background: white;
+  color: #22c55e;
+  font-weight: 700;
+  padding: 10px 26px;
+  cursor: pointer;
+}
+
+.EditProfile__save-button {
+  border: 0;
+  border-radius: 8px;
+  background: #7bc95e;
+  color: white;
+  font-weight: 700;
+  padding: 10px 26px;
+  cursor: pointer;
+}

@@ -75,7 +75,7 @@ function CreateAccountPage() {
         <aside className="createAccountPage__sidebar">
           <button type="button" className="createAccountPage__back-button">
             <img src={authBack} alt="Back" className="createAccountPage__back-icon" />
-            <span className="createAccountPage__back-button-text">Edit Tab</span>
+            <span className="createAccountPage__back-button-text">Tab</span>
           </button>
 
           <div className="createAccountPage__nav">

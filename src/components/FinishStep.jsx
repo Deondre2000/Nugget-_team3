@@ -27,7 +27,7 @@ function FinishStep() {
           <button
             type="button"
             className="createAccountPage__finish-secondary"
-            onClick={() => navigate("/loggedin")}
+            onClick={() => navigate("/Profile")}
           >
             Go to profile page
           </button>

@@ -1,0 +1,398 @@
+.Profile {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  min-height: 100vh;
+  color: #111;
+  background: #fff;
+  font-family: "Segoe UI Local", sans-serif;
+}
+
+.Profile__sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-right: 1px solid #d0d9e3;
+}
+
+.Profile__menu {
+  margin-bottom: 24px;
+  border: 0;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.Profile__sidebar img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.Profile__sidebar-button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.Profile__add {
+  width: 38px;
+  height: 38px;
+  margin-top: auto;
+  border: 1px solid #c7d1dd;
+  border-radius: 5px;
+  color: #8ca4bd;
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.Profile__avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 999px;
+  color: white;
+  background: #111827;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.Profile__panel {
+  position: relative;
+}
+
+.Profile__topbar {
+  height: 52px;
+  border-bottom: 1px solid #c7d5e6;
+}
+
+.Profile__topbar button {
+  border: 0;
+  background: transparent;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.Profile__topbar img {
+  width: 20px;
+  height: 20px;
+}
+
+.Profile__banner {
+  position: relative;
+  height: 200px;
+  background: #eee;
+}
+
+.Profile__banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Profile__banner-edit {
+  position: absolute;
+  top: 16px;
+  right: 39px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.Profile__banner-avatar {
+  position: absolute;
+  left: 24px;
+  bottom: -40px;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+}
+
+.Profile__banner-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Profile__body {
+  padding: 56px 32px 32px;
+}
+
+.Profile__name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.Profile__name-row h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.Profile__location {
+  margin: 2px 0 0;
+  color: #7a8794;
+  font-size: 13px;
+}
+
+.Profile__bio {
+  font-family: "Segoe UI Local", sans-serif;
+  color: #737373;
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+.Profile__divider {
+  margin: 18px 0;
+  border: none;
+  border-top: 1px solid #e2e8f0;
+}
+
+.Profile__edit-link {
+  border: 0;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.Profile__section {
+  margin-bottom: 28px;
+}
+
+.Profile__section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.Profile__section-header h2 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.Profile__public {
+  color: #22c55e;
+  font-weight: 500;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.Profile__kids-row {
+  display: flex;
+  gap: 22px;
+}
+
+.Profile__kid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.Profile__kid-icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+}
+
+.Profile__kid-icon img {
+  border-radius: 100px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Profile__needs-columns {
+  display: flex;
+  gap: 40px;
+}
+
+.Profile__needs-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.Profile__needs-label {
+  color: #8b98a6;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.Profile__tags {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 300px;
+}
+
+.Profile__tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  border: 1px solid #d8e0e8;
+  background: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+.Profile__tag-icon {
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+}
+
+.Profile__tag-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.Profile__tag--green .Profile__tag-icon {
+  background: #d9ffc8;
+}
+
+.Profile__tag--blue .Profile__tag-icon {
+  background: #d8f8fb;
+}
+
+.Profile__tag--purple .Profile__tag-icon {
+  background: #f2d9fb;
+}
+
+.Profile__tag--pink .Profile__tag-icon {
+  background: #f8dcea;
+}
+
+.Profile__needs-expand {
+  align-self: center;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+  color: #777777;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.Profile__groups-row {
+  display: flex;
+  gap: 20px;
+}
+
+.Profile__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  text-align: center;
+  width: 72px;
+}
+
+.Profile__group img {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.Profile__drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  border: 0;
+  background: rgba(20, 24, 28, 0.35);
+}
+
+.Profile__drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 31;
+  width: min(360px, 88vw);
+  height: 100vh;
+  transform: translateX(-100%);
+  border-right: 1px solid #dedede;
+  background: #ffffff;
+  box-shadow: 10px 0 28px rgba(0, 0, 0, 0.16);
+  transition: transform 220ms ease;
+}
+
+.Profile__drawer--open {
+  transform: translateX(0);
+}
+
+.Profile__drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 26px 22px 18px;
+  border-bottom: 1px solid #dadde0;
+}
+
+.Profile__drawer-logo {
+  width: 154px;
+  height: auto;
+  object-fit: contain;
+}
+
+.Profile__drawer-close {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #1f1f1f;
+  border-radius: 6px;
+  padding: 0;
+  background: #ffffff;
+  color: #111111;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.Profile__drawer-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 18px;
+}
+
+.Profile__drawer-nav button {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 46px;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.Profile__drawer-nav button img {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}

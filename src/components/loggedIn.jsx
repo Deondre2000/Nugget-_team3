@@ -46,7 +46,7 @@ function LoggedIn() {
               <button
                 type="button"
                 className="loggedIn__profile-menu-item"
-                onClick={() => navigate("/loggedin")}
+                onClick={() => navigate("/Profile")}
               >
                 <img src={PP} alt="Profile" />
                 View Profile

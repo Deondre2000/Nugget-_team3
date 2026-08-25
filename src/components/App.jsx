@@ -2,6 +2,8 @@ import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import ReviewsPage from "./ReviewsPage.jsx";
 import "../blocks/App.css";
 import Nav from "./Nav.jsx";
+import ProfilePage from "./Profile.jsx";
+import EditProfilePage from "./EditProfile.jsx";
 import Home from "./Home.jsx";
 import Footer from "./Footer.jsx";
 import AuthPage from "./AuthPage.jsx";
@@ -30,6 +32,8 @@ function App() {
         <Route path="/restaurantsPage" element={<RestaurantsPage />} />
         <Route path="/reviews" element={<ReviewsPage />} />
         <Route path="/ReviewsPage" element={<ReviewsPage />} />
+        <Route path="/Profile" element={<ProfilePage />} />
+        <Route path="/EditProfile" element={<EditProfilePage />} />
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
