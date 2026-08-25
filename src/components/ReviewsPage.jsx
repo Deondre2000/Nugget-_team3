@@ -137,15 +137,19 @@ function ReviewsPage() {
                 </button>
               </div>
 
-              <button
-                className="ReviewsPage__review-button"
-                type="button"
-                onClick={() =>
-                  navigate("/restaurantsPage", { state: { openReview: true } })
-                }
-              >
-                Leave a Review
-              </button>
+              <div className="ReviewsPage__review-action-bar">
+                <button
+                  className="ReviewsPage__review-button"
+                  type="button"
+                  onClick={() =>
+                    navigate("/restaurantsPage", {
+                      state: { openReview: true },
+                    })
+                  }
+                >
+                  Leave a Review
+                </button>
+              </div>
             </>
           )}
 
