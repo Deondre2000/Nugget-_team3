@@ -57,6 +57,8 @@
 
 .EditProfile__tabs-item--active {
   color: #22c55e;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .EditProfile__tabs-icon {
@@ -147,8 +149,8 @@
 }
 
 .EditProfile__name-edit img {
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
 }
 
 .EditProfile__divider {
@@ -189,7 +191,7 @@
 .EditProfile__input,
 .EditProfile__textarea {
   width: 100%;
-  border: 1px solid #d8dee5;
+  border: 1px solid #555;
   border-radius: 8px;
   background: #f4f6f8;
   padding: 12px 14px;
@@ -205,7 +207,7 @@
 
 .EditProfile__button-row {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 14px;
   margin-top: 8px;
 }
@@ -228,4 +230,409 @@
   font-weight: 700;
   padding: 10px 26px;
   cursor: pointer;
+}
+
+.EditProfile__add-group-button {
+  margin-left: auto;
+  border: 0;
+  border-radius: 8px;
+  background: #111827;
+  color: white;
+  font-weight: 700;
+  padding: 10px 26px;
+  cursor: pointer;
+}
+
+.EditProfile__groups-grid {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.EditProfile__group-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 96px;
+}
+
+.EditProfile__group-image-wrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+
+.EditProfile__group-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.EditProfile__group-more {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: white;
+  cursor: pointer;
+}
+
+.EditProfile__group-more img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.EditProfile__group-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.EditProfile__group-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #1f1f1f;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.EditProfile__group-menu button:hover {
+  background: #f4f6f8;
+}
+
+.EditProfile__group-menu button img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.EditProfile__group-menu button.EditProfile__group-menu-leave {
+  color: #ef4444;
+  border-top: 1px solid #e2e8f0;
+  margin-top: 4px;
+  padding-top: 10px;
+}
+
+.EditProfile__group-label {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.EditProfile__public-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.EditProfile__public-toggle {
+  position: relative;
+}
+
+.EditProfile__public-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #bdc9d8;
+  border-radius: 999px;
+  background: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
+.EditProfile__public-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: white;
+  padding: 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.EditProfile__public-menu-item {
+  border: 0;
+  background: transparent;
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: #1f1f1f;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.EditProfile__public-menu-item:hover {
+  background: #f4f6f8;
+}
+
+.EditProfile__public-menu-item--active {
+  color: #22c55e;
+}
+
+.EditProfile__public-icon,
+.EditProfile__public-dropdown {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.EditProfile__public-text {
+  margin: 0;
+  color: #555;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.EditProfile__kids-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 24px;
+}
+
+.EditProfile__kid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 90px;
+}
+
+.EditProfile__kid-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.EditProfile__kid-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.EditProfile__kid-label {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.EditProfile__kid-age {
+  margin: 0;
+  font-size: 11px;
+  color: #8b98a6;
+  text-align: center;
+}
+
+.EditProfile__count-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.EditProfile__count-button {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #1f1f1f;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.EditProfile__count-value {
+  min-width: 18px;
+  text-align: center;
+  font-size: 16px;
+  color: #1f1f1f;
+}
+
+.EditProfile__needs-instruction {
+  margin: 0 0 2px;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.EditProfile__needs-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.EditProfile__needs-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.EditProfile__needs-title {
+  margin: 0;
+  color: #777777;
+  font-size: 15px;
+}
+
+.EditProfile__needs-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.EditProfile__need-button {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #bdc9d8;
+  border-radius: 12px;
+  background: #fbfcfd;
+  padding: 6px 10px;
+  color: #707070;
+  text-align: left;
+  cursor: pointer;
+}
+
+.EditProfile__need-button--selected {
+  border: 2px solid #79c44d;
+  padding: 5px 9px;
+  color: #1f1f1f;
+}
+
+.EditProfile__need-icon {
+  min-width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d9ffc8;
+}
+
+.EditProfile__need-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.EditProfile__need-button--blue .EditProfile__need-icon {
+  background: #d8f8fb;
+}
+
+.EditProfile__need-button--pink .EditProfile__need-icon {
+  background: #f8dcfa;
+}
+
+.EditProfile__need-label {
+  flex: 1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.EditProfile__need-check {
+  color: #6bab48;
+  line-height: 1;
+}
+
+.EditProfile__need-check img {
+  width: 16px;
+  height: 16px;
+}
+
+.EditProfile__needs-expand {
+  align-self: center;
+  border: 0;
+  background: transparent;
+  color: #777777;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.EditProfile__restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 900px;
+}
+
+.EditProfile__restaurant-card {
+  cursor: pointer;
+  border: 1px solid #94a3b8;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.EditProfile__restaurant-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.EditProfile__restaurant-name {
+  margin: 10px 10px 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.EditProfile__restaurant-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0 10px 4px;
+  color: #555;
+  font-size: 11px;
+}
+
+.EditProfile__restaurant-meta img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.EditProfile__restaurant-address {
+  margin: 0 10px 10px;
+  color: #8b98a6;
+  font-size: 11px;
 }

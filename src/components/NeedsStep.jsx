@@ -1,11 +1,10 @@
 import "../blocks/NeedsStep.css";
-import publicIcon from "../assets/public.png";
-import publicIcon2 from "../assets/public-drop.png";
 import { useState } from "react";
 import health from "../assets/healthy.png";
 import chair from "../assets/high-chairs.png";
 import wheelchair from "../assets/wheelchair.png";
 import check from "../assets/check.png";
+import PublicToggle from "./PublicToggle";
 
 const needSections = [
   {
@@ -90,19 +89,7 @@ function NeedsStep({ nextStep }) {
     >
       <h2 className="createAccountPage__section-header">About your needs</h2>
       <div className="createAccountPage__public-row">
-        <button type="button" className="createAccountPage__public-button">
-          <img
-            src={publicIcon}
-            alt="Public"
-            className="createAccountPage__public-icon"
-          />
-          Public
-          <img
-            src={publicIcon2}
-            alt="Dropdown"
-            className="createAccountPage__public-dropdown"
-          />
-        </button>
+        <PublicToggle />
         <p className="createAccountPage__public-text">
           (Allow the public to view this section)
         </p>

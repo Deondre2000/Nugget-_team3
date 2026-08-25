@@ -219,6 +219,7 @@ function RestaurantsPage() {
                 onClick={() => {
                   setSelectedExperience("");
                   setSelectedTags([]);
+                  navigate("/restaurantsPage");
                 }}
               >
                 Clear All
@@ -280,7 +281,9 @@ function RestaurantsPage() {
                         type="button"
                         onClick={() => setIsShareMenuOpen(false)}
                       >
-                        <span className="RestaurantsPage__share-dropdown-share-icon">↩</span>
+                        <span className="RestaurantsPage__share-dropdown-share-icon">
+                          ↩
+                        </span>
                         Share
                       </button>
                     </div>
@@ -367,7 +370,9 @@ function RestaurantsPage() {
                           type="button"
                           onClick={() => setOpenReviewMenuId(null)}
                         >
-                          <span className="RestaurantsPage__card-dropdown-icon">↩</span>
+                          <span className="RestaurantsPage__card-dropdown-icon">
+                            ↩
+                          </span>
                           Share
                         </button>
                         <button
@@ -375,7 +380,9 @@ function RestaurantsPage() {
                           type="button"
                           onClick={() => setOpenReviewMenuId(null)}
                         >
-                          <span className="RestaurantsPage__card-dropdown-alert">!</span>
+                          <span className="RestaurantsPage__card-dropdown-alert">
+                            !
+                          </span>
                           Report Review
                         </button>
                       </div>
@@ -442,7 +449,9 @@ function RestaurantsPage() {
                           type="button"
                           onClick={() => setOpenReviewMenuId(null)}
                         >
-                          <span className="RestaurantsPage__card-dropdown-icon">↩</span>
+                          <span className="RestaurantsPage__card-dropdown-icon">
+                            ↩
+                          </span>
                           Share
                         </button>
                         <button
@@ -450,7 +459,9 @@ function RestaurantsPage() {
                           type="button"
                           onClick={() => setOpenReviewMenuId(null)}
                         >
-                          <span className="RestaurantsPage__card-dropdown-alert">!</span>
+                          <span className="RestaurantsPage__card-dropdown-alert">
+                            !
+                          </span>
                           Report Review
                         </button>
                       </div>

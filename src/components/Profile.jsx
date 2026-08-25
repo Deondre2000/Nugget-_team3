@@ -22,19 +22,18 @@ import downtown from "../assets/downtown.png";
 import daddy from "../assets/daddy.png";
 import resident from "../assets/resident.png";
 import frog from "../assets/frog.png";
-import Pcat from "../assets/Pcat.png";
-import Pdeer from "../assets/Pdeer.png";
+import cat from "../assets/Pcat.png";
+import deer from "../assets/Pdeer.png";
 import sheep from "../assets/sheep.png";
-import Pmouse from "../assets/Pmouse.png";
+import mouse from "../assets/Pmouse.png";
 import createEditT from "../assets/create-editT.png";
-import LoggedIn from "./loggedIn";
 
 const kids = [
   { label: "Baby", icon: frog },
-  { label: "Toddler", icon: Pmouse, count: 2 },
-  { label: "Big Kid", icon: Pcat },
+  { label: "Toddler", icon: mouse, count: 2 },
+  { label: "Big Kid", icon: cat },
   { label: "Tween", icon: sheep },
-  { label: "Teen", icon: Pdeer },
+  { label: "Teen", icon: deer },
 ];
 
 const needSections = [

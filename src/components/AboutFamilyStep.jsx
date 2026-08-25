@@ -4,8 +4,7 @@ import rat from "../assets/rat.png";
 import cat from "../assets/cat.png";
 import sheep from "../assets/sheep.png";
 import deer from "../assets/deer.png";
-import publicIcon from "../assets/public.png";
-import publicIcon2 from "../assets/public-drop.png";
+import PublicToggle from "./PublicToggle";
 
 const familyMembers = [
   ["baby", "Baby", "(0 - 12 months)", frog, "Frog"],
@@ -27,11 +26,7 @@ function AboutFamilyStep({ counts, updateCount, nextStep }) {
       <h2 className="createAccountPage__section-header">About your family</h2>
 
       <div className="createAccountPage__public-row">
-        <button type="button" className="createAccountPage__public-button">
-          <img src={publicIcon} alt="Public" className="createAccountPage__public-icon" />
-          Public
-          <img src={publicIcon2} alt="Dropdown" className="createAccountPage__public-dropdown" />
-        </button>
+        <PublicToggle />
         <p className="createAccountPage__public-text">
           (Allow the public to view this section)
         </p>
